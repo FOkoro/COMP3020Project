@@ -1,0 +1,59 @@
+body{
+	/*height: 100%;
+	background-image: url("back2.jpg");
+	background-repeat: repeat;
+	background-position: center;
+	background-size: cover;
+	background-color: red;*/
+	
+}
+
+.food-container{
+	background-size: cover;
+	width: 150px;	
+	border: 2px solid #DAA520;
+	border-radius: 5px;	
+}
+
+.food-img-top{
+	height:100px;
+	width:100%; 
+	display: block;
+}
+
+.main-nav-ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #800000;
+    opacity: 0.7;
+}
+.cart-botton{
+	
+	border: 1px solid blue;
+	border-style:double;
+	
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #FF0000;
+}
+
+.active{
+	background-color:#DAA520;
+	color: white;
+}
+
