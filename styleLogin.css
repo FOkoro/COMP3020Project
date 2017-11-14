@@ -1,7 +1,9 @@
 body{
 	
-	background-color: gray;
-}
+	
+    margin:0 auto;
+    background-color: grey;
+	}
 
 .main-nav-ul{
     list-style-type: none;
@@ -48,3 +50,80 @@ a{
 
 
 /*-----------------------------------------------------------------------*/
+
+
+.accBox{
+    width: 700px;
+    height: 700px;
+    text-align: center;
+    background-color: #800000;
+    border-radius:10px; 
+    margin: 0 auto;
+    margin-top: 150px;
+
+    /*border-style: solid;
+    border-width: medium;
+    border-color: white;*/
+}
+
+#usr_img img{
+    margin-top: 60px;
+    margin-bottom: 30px;
+    margin-left:10px;
+    margin-right:10px;
+    height: 120px;
+    width: 120px;
+    border-style: solid;
+    border-width: medium;
+    border-color: white;
+    border-radius: 50%; 
+}
+
+input{
+    height: 20px;
+    width: 400px;
+    font-size: 15px ;
+    margin-bottom: 30px;
+
+}
+
+.inputContainer label{
+    font-size: 30px;
+}
+
+
+/*Button Config---------------------------------------------*/
+.button{
+    border-radius: 5px;
+    display: inline-block;
+    border:none;
+    text-align: center;
+    padding: 10px 15px;
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.large_button{
+    padding: 10px 50px;
+    font-size: 18px;
+    border-radius: 7px;
+}
+
+.button_success{
+    color:black;
+    background-color: #DAA520; 
+    border-color: #D39b0e;
+}
+
+.button_success:active,
+.button_success:hover,
+.button_success:focus{
+    color:white;
+    font-weight: bold;
+    background-color: #B8860B;
+    border-color: #a37608;
+}
+
+/*Button Config End---------------------------------------*/
