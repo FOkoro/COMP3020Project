@@ -1,3 +1,12 @@
 chicken
 fries
 wings
+
+	<!--<div class="food-container" style="background-image:url(wings.jpg);">
+			<!--<img class="food-img-top" src="back2.jpg" alt="name of food"> -->
+			<div class="food-block">
+				<h4 class="food-name">Chicken wings</h4>
+				<a href="#" class="cart-botton">Add to Cart</a>
+			</div>
+		</div>-->
+		
