@@ -82,12 +82,14 @@ input{
     width: 400px;
     font-size: 15px ;
     margin-bottom: 30px;
+    font-weight: bold;
 
 }
 
 .inputContainer label{
     font-size: 30px;
 }
+
 
 
 /*Button Config---------------------------------------------*/
