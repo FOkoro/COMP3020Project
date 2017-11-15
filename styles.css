@@ -110,17 +110,6 @@ body{
 	display: block;
 }
 
-.main-nav-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #800000;
-    opacity: 0.7;
-}
-
-
-
 .cart-botton{
 	color: white;
 	border: 1px solid blue;
@@ -132,9 +121,12 @@ body{
 }
 
 .button {
-    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    float: left;
+    /*background-color: blue;*/
     border: none;
-    color: white;
+    color: green;
     padding: 2px 2px;
     text-align: center;
     text-decoration: none;
@@ -151,22 +143,6 @@ body{
 	
 }
 
-li {
-    float: left;
-}
-
-.nav-item {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.nav-item:hover {
-    background-color: #FF0000;
-}
-
 .catigory-list{
 	list-style-type: none;
 	margin: 0;
@@ -178,10 +154,6 @@ li {
 	display: block;
 	margin: 8px;
         padding: 5px;
-}
-
-a{
-	text-decoration: none;
 }
 
 #active{
