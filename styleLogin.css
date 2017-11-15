@@ -78,18 +78,67 @@ a{
 }
 
 input{
-    height: 20px;
+    height: 30px;
     width: 400px;
     font-size: 15px ;
     margin-bottom: 30px;
     font-weight: bold;
+    padding-left: 30px;
 
 }
 
-.inputContainer label{
-    font-size: 30px;
+
+
+.inputContainer::before{
+    content: "\f007" ;
+    position: absolute;
+    font-family: "FontAwesome";
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top:10px;
+    font-size: 20px;
 }
 
+.inputContainer:nth-child(2)::before{
+    content: "\f0e0" ;
+    position: absolute;
+    font-family: "FontAwesome";
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top:10px;
+    font-size: 20px;
+}
+
+.inputContainer:nth-child(3)::before{
+    content: "\f098" ;
+    position: absolute;
+    font-family: "FontAwesome";
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top:10px;
+    font-size: 20px;
+}
+
+.inputContainer:nth-child(4)::before{
+    content: "\f023" ;
+    position: absolute;
+    font-family: "FontAwesome";
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top:10px;
+    font-size: 20px;
+}
+
+
+.inputContainer:nth-child(5)::before{
+    content: "\f023" ;
+    position: absolute;
+    font-family: "FontAwesome";
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top:10px;
+    font-size: 20px;
+}
 
 
 /*Button Config---------------------------------------------*/
