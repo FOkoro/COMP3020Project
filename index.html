@@ -52,8 +52,9 @@
 			<div class="food-container">
 				<div class="container">
 					<img src="HoneyMustardGrilledChicken.jpeg" alt="Honey Mustard Grilled Chicken" class="image">
-					<div class="overlay">
-						<button class="button">Add To Cart</button>
+					<div class="overlay" id=“item1”>
+						//<button class="button">Add To Cart</button>
+						<input	type=“button”  value=“Add To Cart”  onclick=“cart(‘item1’)”>
 						<a style="position:absolute;margin-top:85%;margin-left:30%;" href="#" id="myBtn">more[+]</a></li>
 						<p style="float:left; padding:0;margin:0;" class="price"> $15 </p>
 						<div class="text">Honey Mustard Grilled Chicken</div>
@@ -588,6 +589,23 @@ window.onclick = function(event) {
 	if (event.target == modal) {
 		modal.style.display = "none";
 	}
+}
+
+//Function for adding items to a cart
+
+function cart(id)
+{
+	var ele = document.getElementById(id);
+	var img_src = ele.getElementByTagName(“img”)[0].src;
+	
+	$.ajax({
+	type:’post’,
+	url:’store_items.php’
+	data:{
+	item_src:img_src
+	},
+	});
+
 }
 </script>
 
