@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
 
@@ -13,10 +13,8 @@
 </head>
 
 <body>
-	<div class = "backG"><!--Div for the full page background , 
-		change .backG in your own style sheet to edit the bacground image-->
+	<button onclick="topFunction()" id="btnTop" title="Go to top">Top</button>
 		<!--Logo section-->
-
 		<header>
 			<div class="logo">
 				<img src="logo1B.png" width="100" height="100">
@@ -49,15 +47,22 @@
 		<h3 class="catigory-header"><a name="main-dish">Main Dish</a></h3>
 
 		<ul class="food-list">
+	
+			<!-- NOTE: each food item has price and quantity for calculations -->
 			<div class="food-container">
 				<div class="container">
 					<img src="HoneyMustardGrilledChicken.jpeg" alt="Honey Mustard Grilled Chicken" class="image">
-					<div class="overlay" id=“item1”>
+					<div class="overlay">
 						<button class="button">Add To Cart</button>
+				
+						<a style="position:absolute;text-align:center;margin-top:85%;margin-left:77%;" href="#" id="myBtn"><strong>Info.</strong>></a></li>
+						<p style="float:left; padding:0;margin:0;" id="price">$15</p>
+
+						<div style="position:absolute;margin-top:50%;margin-left:57.5%;"><button id="+" onclick="numUp()">+</button></div>
+						<div style="position:absolute; margin-top:50%;margin-left:22.5%;"><button style="width: 23px;" id="-" onclick="numDown()">-</button></div>
 						
-						<a style="position:absolute;margin-top:85%;margin-left:30%;" href="#" id="myBtn">more[+]</a></li>
-						<p style="float:left; padding:0;margin:0;" class="price"> $15 </p>
-						<div class="text">Honey Mustard Grilled Chicken</div>
+						<div id="qty-div"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity1" step="1" min="0" max="99" maxLength="2" value="1" style="background-color: #DAA520;text-align: center;"> </div>
+						<div style="margin-top:15px;" class="text">Honey Mustard<br>Grilled Chicken</div>
 					</div>
 				</div>
 			</div>
@@ -68,7 +73,21 @@
 				<!-- Modal content -->
 				<div class="modal-content">
 					<span class="close">&times;</span>
-					<p>Some text in the Modal..</p>
+					<!-- image, foodname, foodDiscription, quantity,controlBottons, price-->
+					
+					<div class="food-container"> <!--this should contain the image-->
+						<!--<img src="HoneyMustardGrilledChicken.jpeg" alt="Honey Mustard Grilled Chicken" class="image">-->
+					</div>
+					<div class="modal-txt-container">
+						<h3 class="modal-title"> Honey Mustard Grilled Chicken</h3>
+						<p class="modal-info"> Meal like non other.<br>Ingredients:chicken, honey, onions.</p>
+					</div>
+					<div style="display: inline-block;"><button id="+" onclick="numUp()">+</button></div>
+					<div id="qty-di"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity1-m" step="1" min="0" max="99" maxLength="2" value="1" style= "background-color: #DAA520;text-align: center;"> </div>
+					<div style=""><button class="button" style="width: 24px;margin:0;" id="-" onclick="numDown()">-</button></div>
+
+
+					<!--<input type="text" >-->
 				</div>
 			</div>
 
@@ -479,91 +498,6 @@
 			</div>
 		</ul>
 
-		<h3 class="catigory-header"><a name="quick-items">Quick Items</a></h3>
-
-		<ul class="food-list">
-			<div class="food-container">
-				<div class="container">
-					<img src="wings.png" alt="wings" class="image">
-					<div class="overlay">
-						<div class="text">Chicken Wings</div>
-						<button class="button">Add To Cart</button>
-					</div>
-				</div>
-			</div>
-
-			<div class="food-container">
-				<div class="container">
-					<img src="burger.jpeg" alt="burger and fries" class="image">
-					<div class="overlay">
-						<div class="text">Burger and Fries</div>
-						<button class="button">Add To Cart</button>
-					</div>
-				</div>
-			</div>
-
-			<div class="food-container">
-				<div class="container">
-					<img src="tri.jpg" alt="spiced lamb" class="image">
-					<div class="overlay">
-						<div class="text">Spiced Lamb</div>
-						<button class="button">Add To Cart</button>
-					</div>
-				</div>
-			</div>
-
-			<div class="food-container">
-				<div class="container">
-					<img src="fruit.jpg" alt="fruits" class="image">
-					<div class="overlay">
-						<div class="text">Fruit Salad</div>
-						<button class="button">Add To Cart</button>
-					</div>
-				</div>
-			</div>
-
-			<div class="food-container">
-				<div class="container">
-					<img src="wings.png" alt="wings" class="image">
-					<div class="overlay">
-						<div class="text">Chicken Wings</div>
-						<button class="button">Add To Cart</button>
-					</div>
-				</div>
-			</div>
-
-			<div class="food-container">
-				<div class="container">
-					<img src="burger.jpeg" alt="burger and fries" class="image">
-					<div class="overlay">
-						<div class="text">Burger and Fries</div>
-						<button class="button">Add To Cart</button>
-					</div>
-				</div>
-			</div>
-
-			<div class="food-container">
-				<div class="container">
-					<img src="tri.jpg" alt="spiced lamb" class="image">
-					<div class="overlay">
-						<div class="text">Spiced Lamb</div>
-						<button class="button">Add To Cart</button>
-					</div>
-				</div>
-			</div>
-
-			<div class="food-container">
-				<div class="container">
-					<img src="fruit.jpg" alt="fruits" class="image">
-					<div class="overlay">
-						<div class="text">Fruit Salad</div>
-						<button class="button">Add To Cart</button>
-					</div>
-				</div>
-			</div>
-		</ul>
-
-	</div>
 	<script>
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -591,22 +525,40 @@ window.onclick = function(event) {
 	}
 }
 
-//Function for adding items to a cart
 
-function cart(id)
-{
-	var ele = document.getElementById(id);
-	var img_src = ele.getElementByTagName(“img”)[0].src;
-	
-	$.ajax({
-	type:’post’,
-	url:’store_items.php’
-	data:{
-	item_src:img_src
-	},
-	});
+//code for button increament
 
+function numUp(){
+
+    document.getElementById("quantity1").stepUp(1);
+    document.getElementById("quantity1-m").stepUp(1);
 }
+
+function numDown(){
+    var temp= document.getElementById("quantity1").value;
+    if ( temp > 0) {
+       document.getElementById("quantity1").stepDown(1);
+       document.getElementById("quantity1-m").stepDown(1);
+    }
+}
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("btnTop").style.display = "block";
+    } else {
+        document.getElementById("btnTop").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+
 </script>
 
 </body>

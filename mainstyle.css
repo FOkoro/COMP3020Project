@@ -64,6 +64,7 @@ a{
 	text-decoration: none;
 }
 
+
 #active{
 	color: black;
     background: linear-gradient(white 20% , #DAA520 80% );
@@ -72,16 +73,10 @@ a{
 
 /* Background Settings */
 
-html {
-    height:100% auto ;
+body{
 
-    margin: 0;
-
-}
-
-body {
     /* The image used */
-    background-image: url("prac2.jpeg");
+    background-image: url("prac5.jpg");
 
     /* Full height */
     height: 100%; 

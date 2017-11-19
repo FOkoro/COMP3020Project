@@ -154,20 +154,21 @@
 	width: 1000px;
 	margin: 0 auto;
 	list-style-type: none;
-	text-align:left;
 	overflow: hidden;
 }
 
 .catigory-item{
 	display: block;
-	margin: 8px;
-        padding: 5px;
+	margin: 0;
+        padding: 0;
+	text-align:left;
 }
 
 .catigory-header{
 	width: 1000px;
 	margin: 0 auto;
 	margin-bottom:10px;
+	color: #DAA520;
 }
 
 

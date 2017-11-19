@@ -10,3 +10,90 @@ wings
 			</div>
 		</div>-->
 		
+
+
+
+
+		<h3 class="catigory-header"><a name="quick-items">Quick Items</a></h3>
+
+		<ul class="food-list">
+			<div class="food-container">
+				<div class="container">
+					<img src="wings.png" alt="wings" class="image">
+					<div class="overlay">
+						<div class="text">Chicken Wings</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="burger.jpeg" alt="burger and fries" class="image">
+					<div class="overlay">
+						<div class="text">Burger and Fries</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="tri.jpg" alt="spiced lamb" class="image">
+					<div class="overlay">
+						<div class="text">Spiced Lamb</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="fruit.jpg" alt="fruits" class="image">
+					<div class="overlay">
+						<div class="text">Fruit Salad</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="wings.png" alt="wings" class="image">
+					<div class="overlay">
+						<div class="text">Chicken Wings</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="burger.jpeg" alt="burger and fries" class="image">
+					<div class="overlay">
+						<div class="text">Burger and Fries</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="tri.jpg" alt="spiced lamb" class="image">
+					<div class="overlay">
+						<div class="text">Spiced Lamb</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="fruit.jpg" alt="fruits" class="image">
+					<div class="overlay">
+						<div class="text">Fruit Salad</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+		</ul>
