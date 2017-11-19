@@ -72,14 +72,14 @@ a{
 
 /* Background Settings */
 
-body, html {
+html {
     height:100% auto ;
 
     margin: 0;
 
 }
 
-.backG {
+body {
     /* The image used */
     background-image: url("prac2.jpeg");
 
