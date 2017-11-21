@@ -1,124 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-<style>
-	body{
-		background:#ccc;
-	}
-
-	.foodItemContainer{
-		width:1000px;
-		height:120px;
-		display: inline-block;
-		background: #DAA520
-		
-	}
-
-	.foodImageOuterContainer{
-		width: 120px;
-		height: 120px;
-		background: #800000;
-		position: absolute;
-	}
-
-	.foodImageInnerContainer{
-		position: relative;
-		margin-left: 10px;
-		margin-top: 10px;
-		width: 100px;
-		height: 100px;
-		background: url(sample.jpeg);
-	}
-
-	.foodInfo{
-		margin-left: 120px;
-		position: absolute;
-		width: 600px;
-		height: 120px;
-		
-	}
-	.buttonContainer{
-		margin-left: 720px;
-		position: absolute;
-		width: 100px;
-		height: 120px;
-		
-	}
-	.priceContainer
-	{
-		margin-left: 820px;
-		position: absolute;
-		width: 100px;
-		height: 120px;
-		text-align: center;
-				
-	}
-
-	.resetButtonContainer
-	{
-	    margin-left: 920px;
-		position: absolute;
-		width: 80px;
-		height: 120px;
-		
-	}
-    .delBut{
-    	margin-left: 25px;
-    	margin-top: 45px;
-    	width: 30px;
-    	height:30px;
-    	border-radius: 30px;
-    	background:#000000;
-    }
-
-    .delBut:hover{
-    	background:#FFFFFF;
-    }
-    
-    .price{
-    	width: 80px;
-    	height: 20px;
-    }
-    
-    .buttonSect{
-    	width: 80px;
-    	height:  30px;
-    	margin-left: 15px;
-    	margin-top: 50px; 
-     	
-    }
-
-    .sect{
-    	display: inline-block;
-    }
-
-    .qtyBut{
-    
-    	width: 20px;
-    	height:20px;
-    	border-radius: 20px;
-    	background: white;
-    }
-    
-    .qtyBut:hover{
-		background: black;
-		width: 23px;
-		height: 23px;
-		border-radius: 23px;
-    }
-
-    #qtySect{
-    	width:20px;
-    	text-align: center;
-    }
-
-</style>
+	<link rel="stylesheet" href="styleCheckout.css">
 </head>
 <body>
+
 	<div class="foodItemContainer">
 		<div class="foodImageOuterContainer">
-			<div class="foodImageInnerContainer"></div>
+			<div class="foodImageInnerContainer">
+				<img src="HoneyMustardGrilledChicken.jpeg" alt="Honey Mustard Grilled Chicken" style="width: 100px;height: 100px">
+			</div>
 		</div>
 		<div class="foodInfo">
 			<h2>Food Title</h2>
@@ -137,7 +28,97 @@
 			</div>
 		</div>
 		<div class="priceContainer">
-			<div class="price" style="margin-top: 52px">$50.00</div>
+			<div class="price" style="margin-top: 52px">$9.00</div>
+		</div>
+		<div class="resetButtonContainer">
+			<input type="image" class="delBut" src="delBut.jpg" name="#">
+		</div>
+	</div> 
+
+	<div class="foodItemContainer">
+		<div class="foodImageOuterContainer">
+			<div class="foodImageInnerContainer">
+				<img src="JollofRice.png" alt="Jollof Rice" style="width: 100px;height: 100px">
+			</div>
+		</div>
+		<div class="foodInfo">
+			<h2>Food Title</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque animi similique, architecto hic sunt molestias dolor aliquid cupiditate et. Saepe amet cumque optio nisi temporibus deserunt nesciunt ut odit, expedita.</p>
+		</div>
+		<div class="buttonContainer">
+			<div class="buttonSect">
+				<div class="sect">
+					<input type="image" src="minus.png" class="qtyBut" name="#">
+				</div>
+				<div class="sect" id="qtySect">0</div>
+				<div class="sect">
+					<input type="image" src="plus.png" class="qtyBut" name="#">
+				</div>
+				
+			</div>
+		</div>
+		<div class="priceContainer">
+			<div class="price" style="margin-top: 52px">$15.00</div>
+		</div>
+		<div class="resetButtonContainer">
+			<input type="image" class="delBut" src="delBut.jpg" name="#">
+		</div>
+	</div> 
+
+	<div class="foodItemContainer">
+		<div class="foodImageOuterContainer">
+			<div class="foodImageInnerContainer">
+				<img src="SteamedLobsterTail.jpg" alt="Steamed Lobster Tail" style="width: 100px;height: 100px">
+			</div>
+		</div>
+		<div class="foodInfo">
+			<h2>Food Title</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem at debitis illo pariatur aperiam ipsam aspernatur, autem nihil nam quam veniam laborum sunt, aliquid cum quos accusamus laboriosam adipisci quas.</p>
+		</div>
+		<div class="buttonContainer">
+			<div class="buttonSect">
+				<div class="sect">
+					<input type="image" src="minus.png" class="qtyBut" name="#">
+				</div>
+				<div class="sect" id="qtySect">0</div>
+				<div class="sect">
+					<input type="image" src="plus.png" class="qtyBut" name="#">
+				</div>
+				
+			</div>
+		</div>
+		<div class="priceContainer">
+			<div class="price" style="margin-top: 52px">$17.00</div>
+		</div>
+		<div class="resetButtonContainer">
+			<input type="image" class="delBut" src="delBut.jpg" name="#">
+		</div>
+	</div> 
+
+	<div class="foodItemContainer">
+		<div class="foodImageOuterContainer">
+			<div class="foodImageInnerContainer">
+				<img src="FriedRice.jpeg" alt="Fried Rice" style="width: 100px;height: 100px">
+			</div>
+		</div>
+		<div class="foodInfo">
+			<h2>Food Title</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, doloremque distinctio non molestias, ut aperiam quisquam accusamus nesciunt veniam, deserunt quam hic veritatis tempora nemo. Id cum optio dolorum ipsa.</p>
+		</div>
+		<div class="buttonContainer">
+			<div class="buttonSect">
+				<div class="sect">
+					<input type="image" src="minus.png" class="qtyBut" name="#">
+				</div>
+				<div class="sect" id="qtySect">0</div>
+				<div class="sect">
+					<input type="image" src="plus.png" class="qtyBut" name="#">
+				</div>
+				
+			</div>
+		</div>
+		<div class="priceContainer">
+			<div class="price" style="margin-top: 52px">$12.00</div>
 		</div>
 		<div class="resetButtonContainer">
 			<input type="image" class="delBut" src="delBut.jpg" name="#">

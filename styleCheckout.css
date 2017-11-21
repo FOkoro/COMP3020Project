@@ -1,0 +1,104 @@
+.foodItemContainer{
+	width:1000px;
+	height:120px;
+	display: inline-block;
+	background: #DAA520
+
+}
+
+.foodImageOuterContainer{
+	width: 120px;
+	height: 120px;
+	background: #800000;
+	position: absolute;
+}
+
+.foodImageInnerContainer{
+	
+	margin-left: 10px;
+	margin-top: 10px;
+
+
+}
+
+.foodInfo{
+	margin-left: 120px;
+	position: absolute;
+	width: 600px;
+	height: 120px;
+
+}
+.buttonContainer{
+	margin-left: 720px;
+	position: absolute;
+	width: 100px;
+	height: 120px;
+
+}
+.priceContainer
+{
+	margin-left: 820px;
+	position: absolute;
+	width: 100px;
+	height: 120px;
+	text-align: center;
+
+}
+
+.resetButtonContainer
+{
+	margin-left: 920px;
+	position: absolute;
+	width: 80px;
+	height: 120px;
+
+}
+.delBut{
+	margin-left: 25px;
+	margin-top: 45px;
+	width: 30px;
+	height:30px;
+	border-radius: 30px;
+	background:#000000;
+}
+
+.delBut:hover{
+	background:#FFFFFF;
+}
+
+.price{
+	width: 80px;
+	height: 20px;
+}
+
+.buttonSect{
+	width: 80px;
+	height:  30px;
+	margin-left: 15px;
+	margin-top: 50px; 
+
+}
+
+.sect{
+	display: inline-block;
+}
+
+.qtyBut{
+
+	width: 20px;
+	height:20px;
+	border-radius: 20px;
+	background: white;
+}
+
+.qtyBut:hover{
+	background: black;
+	width: 23px;
+	height: 23px;
+	border-radius: 23px;
+}
+
+#qtySect{
+	width:20px;
+	text-align: center;
+}
