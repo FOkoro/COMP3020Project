@@ -5,6 +5,7 @@
 	<link rel="icon" href="icon1.png" type="image/png" sizes="16x16">
 	<!-- import style sheet -->
 	<link rel="stylesheet" href="mainstyle.css">
+	<link rel="stylesheet" href="styleHome.css">
 </head>
 <body>
 	<!--Logo section-->
@@ -26,5 +27,70 @@
 			<li ><a href="#cart" class="nav-item">Cart</a></li>
 		</ul>
 	</div>
+
+	
+
+	<div class="hmPgContainer">
+		<div class="wel">
+			<img src="welcome3.png" alt="welcome" style="width: 400px ; height: 294px">
+		</div>
+		<div class="plcOrdContainer">
+			<input id="but" type="image" src="ordernow4B.png" class="ordNow" onclick="window.location.href='index.html';">
+		</div>
+		<div class="sliderContainer">
+			<h2>
+				POPULAR ITEMS:
+			</h2>
+			<div id="sliderBackdrop">
+				<div id="slider">
+					<img class="slide" src="slide1.jpg" >
+					<img class="slide" src="slide2.jpg" >
+					<img class="slide" src="slide3.jpg" >
+					<img class="slide" src="slide4.jpeg" >
+					<img class="slide" src="slide5.jpg" >
+					<button class= "btn" onclick="updateIndex(-1)" id="prev">&#10094;</button>
+					<button class= "btn" onclick="updateIndex(1)" id="next">&#10095;</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
+
+<script>
+	var index = 1;
+
+	function updateIndex(a){
+		index = index + a;
+		previewImage(index);
+	}
+
+	previewImage(1);
+
+	function previewImage(n){
+		var i;
+		var x = document.getElementsByClassName("slide");
+		if(n > x.length){ index = 1;}
+
+		if(n < 1){ index = x.length ;}
+		for (i = 0 ; i<x.length;i++)
+		{
+			x[i].style.display = "none";
+		}
+		x[index-1].style.display= "block";
+	}
+	transition();
+	function transition(){
+		var i;
+		var x = document.getElementsByClassName("slide");
+		for (i = 0 ; i<x.length;i++)
+		{
+			x[i].style.display = "none";
+		}
+		if(index>x.length){index = 1;}
+		x[index-1].style.display= "block";
+		index++;
+		setTimeout(transition, 3000);
+	}
+	
+</script>
 </html>
