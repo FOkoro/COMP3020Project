@@ -83,6 +83,8 @@ h2{
 	width: 1000px;
 }
 
+
+
 #manCont{
 	height:300px;
 	width: 500px;
@@ -95,8 +97,15 @@ h2{
 	width: 500px;
 
 }
+
 #men1 >img{ 
 width: 500px;
 height: 267px;
 position: absolute;
+}
+
+#drnkC{
+	height: 300px;
+	width: 1000px;
+	
 }
