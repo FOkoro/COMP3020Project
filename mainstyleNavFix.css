@@ -1,44 +1,39 @@
 
 .logo{
-    position: absolute;
-    left:20px;
-    right: 20px;
+  
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-header{
-    width: 1000px;
-    height: 120px;
-    margin: 0 auto;
-    position: relative;
-}
+
 
 .main-nav{
+    
     width: 1000px;
     height: 60px;
-    margin: 0 auto;
+    margin: 0 ;
     border-radius: 5px;
+   
 }
 
 #tab1{
-    width: 120px;
+    width: 160px;
 }
 #tab2{
-    width: 120px;
+    width: 160px;
 }
 #tab3{
-    width: 120px;
+    width: 160px;
 }
 #tab4{
-    width: 120px;
+    width: 160px;
 }
 #tab5{
-    text-align: left;
     width: 200px;
 }
 
 #tab6{
-    width: 120px;
+    width: 160px;
 }
 .main-nav ul li{
     list-style: none;
@@ -48,7 +43,7 @@ header{
     box-shadow: 0px 2px 5px 0px gray;
     text-align: center;
     float: left;
-    background: linear-gradient(#800000 20% , black 80% );
+    background: linear-gradient(#006600 20% , black 80% );
 }
 
 .main-nav ul li:nth-child(1){
@@ -58,23 +53,28 @@ header{
     border-radius: 0px 10px 10px 0px;
 }
 /*Old Code Below*/
-.main-nav-ul{
+.main-nav-ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    
 
 }
 .nav-item {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 0px 14px 0px;
 }
 
 .nav-item:hover{
     font-weight: bold;
-    border-bottom: 5px solid #DAA520;
+    border-bottom: 2px solid white;
+}
+
+#tab5:hover{
+    font-weight: normal;
+    border-bottom: 0px solid white;
 }
 
 
@@ -91,7 +91,7 @@ a{
 body{
 
     /* The image used */
-    background-image: url("prac5.jpg");
+    background-image: url("wood.jpg");
 
     /* Full height */
     height: 100%; 
@@ -109,4 +109,11 @@ body{
 
 li{
     float: left;
+}
+
+.fullCont{
+    /*Extend Height so full div will encompass all containers and center align*/
+    width: 1000px;
+    height: 1500px;
+    margin: 0 auto;
 }

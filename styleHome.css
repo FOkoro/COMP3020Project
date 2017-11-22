@@ -6,33 +6,16 @@
 }
 
 h2{
-	color: #DAA520;
-	margin:0;
+	color: white;
 	margin-bottom: 2px;
-	padding: 0;
+	margin-top: 2px;
 	font-family: helvetica;
 	font-style: bold;
 	font-size: 25px;
 }
 
-.hmPgContainer{
-	margin: 0 auto;
-	margin-left: 450px;
 
-}
 
-.plcOrdContainer{
-	margin-top: 50px;
-	height: 320px;
-	width: 320px;
-	border-radius: 320px;
-	margin-bottom: 50px;
-	margin-left: 350px;
-}
-
-.plcOrdContainer:hover{
-	background: #DAA520;
-}
 
 #but{
 	width:300px; 
@@ -44,19 +27,13 @@ h2{
 	margin-top: 10px;
 }
 
-.wel{
-	margin-left: 300px;
-	margin-top: 50px;
-	width: 1000px;
-	height: 294px;
-
-}
 
 #slider{
 	width: 1000px;
-	height: 500px;
+	height: 600px;
 	position: relative;
-	margin-bottom: 100px;
+	
+
 }
 
 #slider>img{
@@ -76,9 +53,9 @@ h2{
 	border:none;
 	border-radius: 30px;
 	margin-top: 225px;
-	background: #800000;
+	background: black;
 	font-size: 25px;
-	color: #DAA520;
+	color: white;
 }
 #slider >#prev:hover{
 	box-shadow: 10px 0px 20px 0px black;
@@ -96,6 +73,30 @@ h2{
 
 .sliderContainer{
 	width:1000px;
-	height:527px;
-	background:#800000;
+	height:630px;
+	background:black;
+
+}
+
+.menContainer{
+	height: 300px;
+	width: 1000px;
+}
+
+#manCont{
+	height:300px;
+	width: 500px;
+	display: inline-block;
+	background:#006600;
+}
+
+#men1{
+	height: 267px;
+	width: 500px;
+
+}
+#men1 >img{ 
+width: 500px;
+height: 267px;
+position: absolute;
 }
