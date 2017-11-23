@@ -1,4 +1,9 @@
+.accPgCnt{
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
 
+}
 
 /*-----------------------------------------------------------------------*/
 
@@ -7,14 +12,11 @@
     width:  700px;
     height: 700px;
     text-align: center;
-    background-color: #800000;
+    background-color: #cfb283;
     border-radius:10px; 
     margin: 0 auto;
     margin-top: 100px;
     margin-bottom: 100px;/*gives space at the bottom of page*/
-    /*border-style: solid;
-    border-width: medium;
-    border-color: white;*/
     box-shadow: 0px 0px 5px 1px #888888;
 }
 
@@ -25,10 +27,9 @@
     margin-right:10px;
     height: 120px;
     width: 120px;
-    border-style: solid;
     border-width: medium;
-    border-color: white;
     border-radius: 50%; 
+    background: white;
 }
 
 input{
@@ -115,9 +116,9 @@ input{
 }
 
 .button_success{
-    color:black;
-    background-color: #DAA520; 
-    border-color: #D39b0e;
+    color:white;
+    background-color: black; 
+    border-color: #lelele;
 }
 
 .button_success:active,
@@ -125,8 +126,8 @@ input{
 .button_success:focus{
     color:white;
     font-weight: bold;
-    background-color: #B8860B;
-    border-color: #a37608;
+    background-color: black;
+    border-color: grey;
 }
 
 /*Button Config End---------------------------------------*/
