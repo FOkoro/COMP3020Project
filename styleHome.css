@@ -15,7 +15,14 @@ h2{
 }
 
 
-
+h3{
+	color: white;
+	margin-bottom: 2px;
+	margin-top: 2px;
+	font-family: helvetica;
+	font-style: bold;
+	font-size: 20px;
+}
 
 #but{
 	width:300px; 
@@ -89,7 +96,7 @@ h2{
 	height:300px;
 	width: 500px;
 	display: inline-block;
-	background:#006600;
+	background:black;
 }
 
 #men1{
@@ -104,8 +111,3 @@ height: 267px;
 position: absolute;
 }
 
-#drnkC{
-	height: 300px;
-	width: 1000px;
-	
-}
