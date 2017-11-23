@@ -1,0 +1,945 @@
+<!doctype html>
+<html>
+<head>
+
+	<title>PLATE OF HEAVEN</title>
+
+	<link rel="icon" href="icon1.png" type="image/png" sizes="16x16">
+	<!-- import style sheet -->
+	<!--<link rel="stylesheet" href="mainstyle.css">-->
+	<link rel="stylesheet" href="mainstyle.css">
+	<link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+<body>
+	<button onclick="topFunction()" id="btnTop" title="Go to top">Top</button>
+	<!--Logo section-->
+	<div class="logo" >
+		<img src="logo1C.png" width="100" height="100">
+		<img src="logo1PartB2.png" width="300" height="100">
+	</div>
+
+
+	<div class="indexMainBody">
+		<div class="indexMainNav" >
+			<div class="main-nav" style="margin:0 auto;" >
+				<ul class="main-nav-ul">
+					<li ><a id ="tab1" href="homepage.html" class="nav-item">Home</a></li>
+					<li ><a id ="tab2" href="index.html" 	class="nav-item" style="color:white;background:linear-gradient(gray 20%,black 80%)">Menu</a></li>
+					<li ><a id ="tab3" href="#" 			class="nav-item">Previous Orders</a></li>
+					<li ><a id ="tab4" href="#" 			class="nav-item">Coupons</a></li>
+					<li ><a id ="tab5" href="#" 			class="nav-item">Guest</a></li>
+					<li ><a id ="tab6" href="#cart" 		class="nav-item">Cart <div id="cont-Amount" value="0" style="position: absolute; display: inline-block;text-align: right;margin-left: 50px; border: solid black 1px;border-radius: 4px;background-color: blue; padding-left:5px; padding-right:5px; " ></div></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="indexSideNav">
+
+			<div >				
+				<ul class="catigory-list" >
+					<li class="catigory-item"> <a class="c-i" href="#main-dish">Main Dish</a></li>
+					<li class="catigory-item"><a class="c-i" href="#vegiterian">Vegiterian</a></li>
+					<li class="catigory-item"> <a class="c-i" href="#sides">Sides</a></li>
+					<li class="catigory-item"><a class="c-i" href="#dessert">Dessert</a></li>
+					<li class="catigory-item"> <a class="c-i" href="#drinks">Drinks</a></li>
+				</ul>
+
+			</div>
+		</div>
+
+		<div class="indexBody">
+		
+		<h3 class="catigory-header"><a name="main-dish">Main Dish</a></h3>
+		<ul class="food-list">
+	
+			<!-- NOTE: each food item has price and quantity for calculations -->
+			<div class="food-container">
+				<div class="container">
+					<img src="HoneyMustardGrilledChicken.jpeg" alt="Honey Mustard Grilled Chicken" class="image">
+					<div class="overlay">
+						<button class="button" onclick="cartFunc('quantity','quantity-m','Honey Mustard Grilled Chicken','myModal')">Add To Cart</button>
+				
+						<a style="position:absolute;text-align:center;margin-top:85%;margin-left:77%;" href="#" onclick="lunchModal('myModal')"><strong>Info.</strong></a></li>
+						<p style="float:left; padding:0;margin:0;" id="price">$15</p>
+
+						<div style="position:absolute;margin-top:50%;margin-left:57.5%;"><button id="+" onclick="numUp('quantity','quantity-m')">+</button></div>
+						<div style="position:absolute; margin-top:50%;margin-left:22.5%;"><button style="width: 23px;" id="-" onclick="numDown('quantity','quantity-m')">-</button></div>
+						
+						<div id="qty-div" style="margin-top:50%;margin-left: 32%;"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity" step="1" min="0" max="99" maxLength="2" value="1" style="background-color: #DAA520;text-align: center;"> </div>
+						<div style="margin-top:15px;" class="text">Honey Mustard<br>Grilled Chicken</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- The Modal -->
+			<div id="myModal" class="modal" >
+				<!-- Modal content -->
+				<div class="modal-content" style="background-color: #DAA520">
+					<span class="close" onclick="closeModal('myModal')">&times;</span>
+					<!-- image, foodname, foodDiscription, quantity,controlBottons, price-->
+					
+					<div class="food-container" style="position: relative;"> <!--this should contain the image-->
+					<img src="HoneyMustardGrilledChicken.jpeg" alt="Honey Mustard Grilled Chicken" class="image">
+					</div>
+					<div class="modal-txt-container">
+						<h3 class="modal-title"> Honey Mustard Grilled Chicken: $15</h3>
+						<p class="modal-info"> Meal like non other.<br>Ingredients:chicken, honey, onions.</p>
+					</div>
+
+					<div class="btnHolder">
+						<div style="padding: 0; margin:0;display: inline-block;width: 25%;height: 95%;">
+							<button class="button1" style="height:100%;margin:0;margin-left:0;margin-top:0;" id="-" onclick="numDown('quantity','quantity-m')">-</button>
+						</div>
+
+						<div style="padding: 0;margin:0;display: inline-block;width: 30%;height: 95%;">
+							<div id="qty-di"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity-m" step="1" min="0" max="99" maxLength="2" value="1" style= "background-color: #DAA520;text-align: center;width: 100%;height: 100%;"> </div>
+							
+						</div>
+
+						<div style=" padding: 0;margin:0;display: inline-block;width: 25%;height: 95%;">
+							<button class="button1" id="+" onclick="numUp('quantity','quantity-m')" style="width: 30%;height:100%;margin:0;">+</button>
+						</div>
+						
+					</div>
+
+					<div style="height: 40%;width:70%;">
+						<textarea hint= "Instructions" style="height: 100%;width: 100%;" name="Text1" cols="40" rows="5"></textarea>
+					</div>
+
+					<div ><!--this is checkout button-->
+						<button class="button2" onclick="cartFunc('quantity','quantity-m','Honey Mustard Grilled Chicken','myModal')">Add to Cart</button>
+					</div>
+					
+
+				</div>
+			</div>
+
+			<!--RICE-->
+			<div class="food-container">
+				<div class="container">
+					<img src="JollofRice.png" alt="JollofRice" class="image">
+					<div class="overlay">
+						<button class="button" onclick="cartFunc('quantity1','quantity1-m','Jollof Rice','myModal1')">Add To Cart</button>
+				
+						<a style="position:absolute;text-align:center;margin-top:85%;margin-left:77%;" href="#" onclick="lunchModal('myModal1')"><strong>Info.</strong></a></li>
+						<p style="float:left; padding:0;margin:0;" id="price">$10</p>
+
+						<div style="position:absolute;margin-top:50%;margin-left:57.5%;"><button id="+" onclick="numUp('quantity1','quantity1-m')">+</button></div>
+						<div style="position:absolute; margin-top:50%;margin-left:22.5%;"><button style="width: 23px;" id="-" onclick="numDown('quantity1','quantity1-m')">-</button></div>
+						
+						<div id="qty-div" style="margin-top:50%;margin-left: 32%;"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity1" step="1" min="0" max="99" maxLength="2" value="1" style="background-color: #DAA520;text-align: center;"> </div>
+						<div style="margin-top:15px;" class="text">Jollof Rice</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- The Modal -->
+			<div id="myModal1" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content" style="background-color: #DAA520">
+					<span class="close" onclick="closeModal('myModal1')">&times;</span>
+					<!-- image, foodname, foodDiscription, quantity,controlBottons, price-->
+					
+					<div class="food-container" style="position: relative;"> <!--this should contain the image-->
+					<img src="JollofRice.png" alt="Jollof Rice" class="image">
+					</div>
+					<div class="modal-txt-container">
+						<h3 class="modal-title">Jollof Rice: $10</h3>
+						<p class="modal-info"> Meal like non other.<br>Ingredients:chicken, rice, onions.</p>
+					</div>
+
+					<div class="btnHolder">
+						<div style="padding: 0; margin:0;display: inline-block;width: 25%;height: 95%;">
+							<button class="button1" style="height:100%;margin:0;margin-left:0;margin-top:0;" id="-" onclick="numDown('quantity1','quantity1-m')">-</button>
+						</div>
+
+						<div style="padding: 0;margin:0;display: inline-block;width: 30%;height: 95%;">
+							<div id="qty-di"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity1-m" step="1" min="0" max="99" maxLength="2" value="1" style= "background-color: #DAA520;text-align: center;width: 100%;height: 100%;"> </div>
+							
+						</div>
+
+						<div style=" padding: 0;margin:0;display: inline-block;width: 25%;height: 95%;">
+							<button class="button1" id="+" onclick="numUp('quantity1','quantity1-m')" style="width: 30%;height:100%;margin:0;">+</button>
+						</div>
+						
+					</div>
+
+					<div style="height: 40%;width:70%;">
+						<textarea hint= "Instructions" style="height: 100%;width: 100%;" name="Text1" cols="40" rows="5"></textarea>
+					</div>
+
+					<div ><!--this is checkout button-->
+						<button class="button2" onclick="cartFunc('quantity1','quantity1-m','Jollof Rice','myModal1')">Add to Cart</button>
+					</div>
+					
+
+				</div>
+			</div>
+
+			<!--TAIL-->
+
+			<div class="food-container">
+				<div class="container">
+					<img src="SteamedLobsterTail.jpg" alt="SteamedLobsterTail" class="image">
+					<div class="overlay">
+						<button class="button" onclick="cartFunc('quantity2','quantity2-m','Steamed Lobster Tail','myModal2')">Add To Cart</button>
+				
+						<a style="position:absolute;text-align:center;margin-top:85%;margin-left:77%;" href="#" onclick="lunchModal('myModal2')"><strong>Info.</strong></a></li>
+						<p style="float:left; padding:0;margin:0;" id="price">$15</p>
+
+						<div style="position:absolute;margin-top:50%;margin-left:57.5%;"><button id="+" onclick="numUp('quantity2','quantity2-m')">+</button></div>
+						<div style="position:absolute; margin-top:50%;margin-left:22.5%;"><button style="width: 23px;" id="-" onclick="numDown('quantity2','quantity2-m')">-</button></div>
+						
+						<div id="qty-div" style="margin-top:50%;margin-left: 32%;"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity2" step="1" min="0" max="99" maxLength="2" value="1" style="background-color: #DAA520;text-align: center;"> </div>
+						<div style="margin-top:15px;text-align: center;" class="text">Steamed Lobster<br>Tail</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- The Modal -->
+			<div id="myModal2" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content" style="background-color: #DAA520">
+					<span class="close" onclick="closeModal('myModal2')">&times;</span>
+					<!-- image, foodname, foodDiscription, quantity,controlBottons, price-->
+					
+					<div class="food-container" style="position: relative;"> <!--this should contain the image-->
+					<img src="SteamedLobsterTail.jpg" alt="SteamedLobsterTail" class="image">
+					</div>
+					<div class="modal-txt-container">
+						<h3 class="modal-title">Steamed Lobster Tail: $15</h3>
+						<p class="modal-info"> Meal like non other.<br>Ingredients:Lobster, rice, onions.</p>
+					</div>
+
+					<div class="btnHolder">
+						<div style="padding: 0; margin:0;display: inline-block;width: 25%;height: 95%;">
+							<button class="button1" style="height:100%;margin:0;margin-left:0;margin-top:0;" id="-" onclick="numDown('quantity2','quantity2-m')">-</button>
+						</div>
+
+						<div style="padding: 0;margin:0;display: inline-block;width: 30%;height: 95%;">
+							<div id="qty-di"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity2-m" step="1" min="0" max="99" maxLength="2" value="1" style= "background-color: #DAA520;text-align: center;width: 100%;height: 100%;"> </div>
+							
+						</div>
+
+						<div style=" padding: 0;margin:0;display: inline-block;width: 25%;height: 95%;">
+							<button class="button1" id="+" onclick="numUp('quantity2','quantity2-m')" style="width: 30%;height:100%;margin:0;">+</button>
+						</div>
+						
+					</div>
+
+					<div style="height: 40%;width:70%;">
+						<textarea hint= "Instructions" style="height: 100%;width: 100%;" name="Text1" cols="40" rows="5"></textarea>
+					</div>
+
+					<div ><!--this is checkout button-->
+						<button class="button2" onclick="cartFunc('quantity2','quantity2-m','Steamed Lobster Tail','myModal2')">Add to Cart</button>
+					</div>
+					
+
+				</div>
+			</div>
+
+
+			<!-- FriedRice	-->
+			<div class="food-container">
+				<div class="container">
+					<img src="FriedRice.jpeg" alt="FriedRice" class="image">
+					<div class="overlay">
+						<button class="button" onclick="cartFunc('quantity3','quantity3-m','Fried Rice','myModal3')">Add To Cart</button>
+				
+						<a style="position:absolute;text-align:center;margin-top:85%;margin-left:77%;" href="#" onclick="lunchModal('myModal3')"><strong>Info.</strong></a></li>
+						<p style="float:left; padding:0;margin:0;" id="price">$10</p>
+
+						<div style="position:absolute;margin-top:50%;margin-left:57.5%;"><button id="+" onclick="numUp('quantity3','quantity3-m')">+</button></div>
+						<div style="position:absolute; margin-top:50%;margin-left:22.5%;"><button style="width: 23px;" id="-" onclick="numDown('quantity3','quantity3-m')">-</button></div>
+						
+						<div id="qty-div" style="margin-top:50%;margin-left: 32%;"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity3" step="1" min="0" max="99" maxLength="2" value="1" style="background-color: #DAA520;text-align: center;"> </div>
+						<div style="margin-top:15px;text-align: center;" class="text">Fried Rice</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- The Modal -->
+			<div id="myModal3" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content" style="background-color: #DAA520">
+					<span class="close" onclick="closeModal('myModal3')">&times;</span>
+					<!-- image, foodname, foodDiscription, quantity,controlBottons, price-->
+					
+					<div class="food-container" style="position: relative;"> <!--this should contain the image-->
+					<img src="FriedRice.jpeg" alt="Fried Rice" class="image">
+					</div>
+					<div class="modal-txt-container">
+						<h3 class="modal-title">Fried Rice: $10</h3>
+						<p class="modal-info"> Meal like non other.<br>Ingredients:Lobster, rice, onions.</p>
+					</div>
+
+					<div class="btnHolder">
+						<div style="padding: 0; margin:0;display: inline-block;width: 25%;height: 95%;">
+							<button class="button1" style="height:100%;margin:0;margin-left:0;margin-top:0;" id="-" onclick="numDown('quantity3','quantity3-m')">-</button>
+						</div>
+
+						<div style="padding: 0;margin:0;display: inline-block;width: 30%;height: 95%;">
+							<div id="qty-di"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity3-m" step="1" min="0" max="99" maxLength="2" value="1" style= "background-color: #DAA520;text-align: center;width: 100%;height: 100%;"> </div>
+							
+						</div>
+
+						<div style=" padding: 0;margin:0;display: inline-block;width: 25%;height: 95%;">
+							<button class="button1" id="+" onclick="numUp('quantity3','quantity3-m')" style="width: 30%;height:100%;margin:0;">+</button>
+						</div>
+						
+					</div>
+
+					<div style="height: 40%;width:70%;">
+						<textarea hint= "Instructions" style="height: 100%;width: 100%;" name="Text3" cols="40" rows="5"></textarea>
+					</div>
+
+					<div ><!--this is checkout button-->
+						<button class="button2" onclick="cartFunc('quantity3','quantity3-m','Fried Rice','myModal3')">Add to Cart</button>
+					</div>
+					
+
+				</div>
+			</div>
+
+			
+			<!-- SpaghettiMeatballs.jpg	-->
+			<div class="food-container">
+				<div class="container">
+					<img src="SpaghettiMeatballs.jpg" alt="SpaghettiMeatballs" class="image">
+					<div class="overlay">
+						<button class="button">Add To Cart</button>
+				
+						<a style="position:absolute;text-align:center;margin-top:85%;margin-left:77%;"><strong>Info.</strong></a></li>
+						<p style="float:left; padding:0;margin:0;" id="price">$15</p>
+
+						<div style="position:absolute;margin-top:50%;margin-left:57.5%;"><button id="+" >+</button></div>
+						<div style="position:absolute; margin-top:50%;margin-left:22.5%;"><button style="width: 23px;" id="-">-</button></div>
+						
+						<div id="qty-div" style="margin-top:50%;margin-left: 32%;"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity4" step="1" min="0" max="99" maxLength="2" value="1" style="background-color: #DAA520;text-align: center;"> </div>
+						<div style="margin-top:15px;text-align: center;" class="text">Spaghetti And <br> Meatballs</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Egusi -->
+
+			<div class="food-container">
+				<div class="container">
+					<img src="EgusiSoup.jpg" alt="EgusiSoup" class="image">
+					<div class="overlay">
+						<button class="button">Add To Cart</button>
+				
+						<a style="position:absolute;text-align:center;margin-top:85%;margin-left:77%;"><strong>Info.</strong></a></li>
+						<p style="float:left; padding:0;margin:0;" id="price">$15</p>
+
+						<div style="position:absolute;margin-top:50%;margin-left:57.5%;"><button id="+" >+</button></div>
+						<div style="position:absolute; margin-top:50%;margin-left:22.5%;"><button style="width: 23px;" id="-">-</button></div>
+						
+						<div id="qty-div" style="margin-top:50%;margin-left: 32%;"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity5" step="1" min="0" max="99" maxLength="2" value="1" style="background-color: #DAA520;text-align: center;"> </div>
+						<div style="margin-top:15px;text-align: center;" class="text">Egusi Soup</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- ChickenKebab-->
+			<div class="food-container">
+				<div class="container">
+					<img src="ChickenKebab.jpg" alt="ChickenKebab" class="image">
+					<div class="overlay">
+						<button class="button">Add To Cart</button>
+				
+						<a style="position:absolute;text-align:center;margin-top:85%;margin-left:77%;"><strong>Info.</strong></a></li>
+						<p style="float:left; padding:0;margin:0;" id="price">$10</p>
+
+						<div style="position:absolute;margin-top:50%;margin-left:57.5%;"><button id="+" >+</button></div>
+						<div style="position:absolute; margin-top:50%;margin-left:22.5%;"><button style="width: 23px;" id="-">-</button></div>
+						
+						<div id="qty-div" style="margin-top:50%;margin-left: 32%;"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity6" step="1" min="0" max="99" maxLength="2" value="1" style="background-color: #DAA520;text-align: center;"> </div>
+						<div style="margin-top:15px;text-align: center;" class="text">Chicken Kebab</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- AssortedMeatPepperSoup -->
+			<div class="food-container">
+				<div class="container">
+					<img src="AssortedMeatPepperSoup.jpg" alt="AssortedMeatPepperSoup" class="image">
+					<div class="overlay">
+						<button class="button">Add To Cart</button>
+				
+						<a style="position:absolute;text-align:center;margin-top:85%;margin-left:77%;"><strong>Info.</strong></a></li>
+						<p style="float:left; padding:0;margin:0;" id="price">$15</p>
+
+						<div style="position:absolute;margin-top:50%;margin-left:57.5%;"><button id="+" >+</button></div>
+						<div style="position:absolute; margin-top:50%;margin-left:22.5%;"><button style="width: 23px;" id="-">-</button></div>
+						
+						<div id="qty-div" style="margin-top:50%;margin-left: 32%;"><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Qty." disabled="yes" type="number" id="quantity6" step="1" min="0" max="99" maxLength="2" value="1" style="background-color: #DAA520;text-align: center;"> </div>
+						<div style="margin-top:15px;text-align: center;" class="text">Assorted Meat<br>Pepper Soup</div>
+					</div>
+				</div>
+			</div>
+
+		</ul>
+
+		<h3 class="catigory-header"><a name="vegiterian">Vegiterian</a></h3>
+
+		<ul class="food-list">
+			<div class="food-container">
+				<div class="container">
+					<img src="barleyBeanSoup.png" alt="Barley And Bean Soup" class="image">
+					<div class="overlay">
+						<div class="text">Barley And Bean Soup</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="blackBeanVeggieBurger.jpg" alt="Black Bean Veggie Burger" class="image">
+					<div class="overlay">
+						<div class="text">Black Bean Veggie Burger</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="greekSaladWithMushroom.jpg" alt="Greek Salad With Mushroom" class="image">
+					<div class="overlay">
+						<div class="text">Greek Salad With Mushroom</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="huevosRancheros.jpg" alt="Huevos Rancheros" class="image">
+					<div class="overlay">
+						<div class="text">Huevos Rancheros</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="phytosalad.jpg" alt="Phytosalad" class="image">
+					<div class="overlay">
+						<div class="text">Phytosalad</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="heartyVegetarianChili.jpg" alt="Hearty Vegetarian Chili" class="image">
+					<div class="overlay">
+						<div class="text">Hearty Vegetarian Chili</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="zucchiniPaneer.jpg" alt="Zucchini Paneer" class="image">
+					<div class="overlay">
+						<div class="text">Zucchini Paneer</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="quinoaBurgerFetaBlackOlives.jpg" alt="Quinoa Burger With Feta & Black Olives" class="image">
+					<div class="overlay">
+						<div class="text">Quinoa Burger With Feta And Black Olives</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+		</ul>
+
+		<h3 class="catigory-header"><a name="sides">Sides</a></h3>
+
+		<ul class="food-list">
+			<div class="food-container">
+				<div class="container">
+					<img src="AsparagusFries.jpeg" alt="Asparagus Fries" class="image">
+					<div class="overlay">
+						<div class="text">Asparagus Fries</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="HasselbackTaterTots.jpeg" alt="Hasselback Tater Tots" class="image">
+					<div class="overlay">
+						<div class="text">Hasselback Tater Tots</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="SesameSnowPeas.jpeg" alt="Sesame Snow Peas" class="image">
+					<div class="overlay">
+						<div class="text">Sesame Snow Peas</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="BakedPotatoCasserole.jpeg" alt="Baked Potato Casserole" class="image">
+					<div class="overlay">
+						<div class="text">Baked Potato Casserole</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="CarrotTahiniSalad.jpeg" alt="Carrot Tahini Salad" class="image">
+					<div class="overlay">
+						<div class="text">Carrot Tahini Salad</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="CurriedCornCoconutRice.jpeg" alt="Curried Corn And Coconut Rice" class="image">
+					<div class="overlay">
+						<div class="text">Curried Corn And Coconut Rice</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="RoastedCabbageBacon.jpeg" alt="Roasted Cabbage With Bacon" class="image">
+					<div class="overlay">
+						<div class="text">Roasted Cabbage With Bacon</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="MeatPie.jpg" alt="Meat Pie" class="image">
+					<div class="overlay">
+						<div class="text">Meat Pie</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+		</ul>
+
+		<h3 class="catigory-header"><a name="dessert">Dessert</a></h3>
+
+		<ul class="food-list">
+			<div class="food-container">
+				<div class="container">
+					<img src="NanaimoBars.jpg" alt="Nanaimo Bars" class="image">
+					<div class="overlay">
+						<div class="text">Nanaimo Bars</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="ButterTart.jpg" alt="Butter Tart" class="image">
+					<div class="overlay">
+						<div class="text">Butter Tart</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="BlueberryGrunt.jpg" alt="Blueberry Grunt" class="image">
+					<div class="overlay">
+						<div class="text">Blueberry Grunt</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="ThunderBayPersianRolls.jpg" alt="Thunder Bay Persian Rolls" class="image">
+					<div class="overlay">
+						<div class="text">Thunder Bay Persian Rolls</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="FlapperPie.jpg" alt="Flapper Pie" class="image">
+					<div class="overlay">
+						<div class="text">Flapper Pie</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="MapleCinnamonRolls.jpg" alt="Maple Cinnamon Rolls" class="image">
+					<div class="overlay">
+						<div class="text">Maple Cinnamon Rolls</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="PoudingChomeur.jpg" alt="Pouding Chômeur" class="image">
+					<div class="overlay">
+						<div class="text">Pouding Chômeur</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="GiantMapleDoughnutCake.jpg" alt="Giant Maple Doughnut Cake" class="image">
+					<div class="overlay">
+						<div class="text">Giant Maple Doughnut Cake</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+		</ul>
+
+		<h3 class="catigory-header"><a name="drinks">Drinks</a></h3>
+
+		<ul class="food-list">
+			<div class="food-container">
+				<div class="container">
+					<img src="aquafina.jpg" alt="Aquafina" class="image">
+					<div class="overlay">
+						<div class="text">Aquafina</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="coke.jpg" alt="Coke" class="image">
+					<div class="overlay">
+						<div class="text">Coke</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="ribena.jpg" alt="Ribena" class="image">
+					<div class="overlay">
+						<div class="text">Ribena</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="fanta.jpg" alt="Fanta" class="image">
+					<div class="overlay">
+						<div class="text">Fanta</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="sprite.jpg" alt="Sprite" class="image">
+					<div class="overlay">
+						<div class="text">Sprite</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="crush.jpeg" alt="Crush" class="image">
+					<div class="overlay">
+						<div class="text">Crush</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="strawberrysmooth.jpg" alt="Strawberry Smoothie" class="image">
+					<div class="overlay">
+						<div class="text">Strawberry Smoothie</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="food-container">
+				<div class="container">
+					<img src="bananasmooth.jpg" alt="Banana Smoothie" class="image">
+					<div class="overlay">
+						<div class="text">Banana Smoothie</div>
+						<button class="button">Add To Cart</button>
+					</div>
+				</div>
+			</div>
+		</ul>
+
+		</div>
+
+	</div>
+
+
+<script>
+// Get the modal
+function lunchModal(id)
+{
+	document.getElementById(id).style.display="block";
+}
+function closeModal(id)
+{
+	document.getElementById(id).style.display="none"
+}
+
+var modal= document.getElementById("myModal");
+var modal1= document.getElementById("myModal1");
+var modal2= document.getElementById("myModal2");
+var modal3= document.getElementById("myModal3");
+
+window.onclick = function(event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
+	if (event.target == modal1) {
+		modal1.style.display = "none";
+	}
+	if (event.target == modal2) {
+		modal2.style.display = "none";
+	}
+	if (event.target == modal3) {
+		modal3.style.display = "none";
+	}
+}
+
+
+//code for button increament
+
+function numUp(id,idM){
+
+    document.getElementById(id).stepUp(1);
+    document.getElementById(idM).stepUp(1);
+}
+
+function numDown(id,idM){
+    var temp= document.getElementById(id).value;
+    if ( temp > 0) {
+       document.getElementById(id).stepDown(1);
+       document.getElementById(idM).stepDown(1);
+    }
+}
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("btnTop").style.display = "block";
+    } else {
+        document.getElementById("btnTop").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+
+var Cart;
+var viewCart;
+setCart();
+
+
+
+var food = {
+	itemName:"",
+	itemPrice:0,
+	itemQty:0
+};
+
+function food(itemName, itemPrice, itemQty)
+{
+	this.itemName = itemName;
+	this.itemPrice= parseInt(itemPrice);
+	this.itemQty = parseInt(itemQty);
+	var totalPrice = 0;
+	
+	this.getTotalPrice = function(){
+		return this.itemPice * this.itemQty;
+	};
+	this.plusQty = function(qty){
+
+		this.itemQty = parseInt(this.itemQty) + parseInt(qty);		
+		return this.itemQty;
+	};
+	
+	this.updateQty = function (value){
+		this.itemQty = value;
+	};
+	this.getName = function (){
+		return this.itemName;
+	};
+	
+	this.resetQty = function ()
+	{
+		this.itemQty = 0;
+	};
+	
+}
+
+function resetQty()
+{
+	cart[0].resetQty;
+	cart[1].resetQty;
+	cart[2].resetQty;
+	cart[3].resetQty;
+}
+
+
+//Function for adding items to a cart
+function setCart()
+{
+	cart = new Array();
+    viewCart = new Array();
+	cart[0] = new food("Honey Mustard Grilled Chicken",15,0);
+	cart[1] = new food("Jollof Rice",10,0);
+	cart[2] = new food("Steamed Lobster Tail",15,0);
+	cart[3] = new food("Fried Rice",10,0);	
+}
+
+function findFood(itemName)
+{
+	var i = 0;
+	var notFound = true;
+	
+	var temp = 0;
+	while((i<cart.length) && notFound)
+	{
+		if((cart[i].getName()) === itemName)
+		{
+			notFound = false;
+			temp = i;
+		}
+		i++;
+	}
+	return temp;
+}
+
+function reset(id)
+{
+	document.getElementById(id).value=0;
+}
+
+var totalInCart=0;
+
+function addItem(itemName, amount)
+{
+	var temp = findFood(itemName);
+	var quantity = cart[temp].plusQty(amount);
+	return quantity;
+}
+
+function changeQty(itemName, amount)
+{
+	var temp = findFood(itemName);
+	cart[temp].updateQty(amount);
+}
+
+function cartNum(itemName,amount){
+	var myVar= addItem(itemName,amount);
+	//var temp= totalCartQty();
+	totalInCart+= amount;
+
+	document.getElementById("cont-Amount").innerHTML= totalInCart;
+
+	return myVar;
+
+}
+
+
+function cartFunc(id,idM,itemName,modalID)
+{
+	var myValue=parseInt(document.getElementById(id).value);
+	cartNum(itemName,myValue);
+	//alert(cart[0].itemQty);
+
+
+	reset(id);
+	reset(idM);
+
+	//printCart();
+
+	document.getElementById(modalID).style.display = "none";
+
+}
+
+function isEmpty()
+{
+	var found= false;
+	for (var i = cart.length - 1; i >= 0 && !found; i--) {
+		
+		if (cart[i].itemQty == 0) {
+			found=true;
+		}
+	}
+}
+
+function printCart() {
+	// body...
+	for (var i = cart.length - 1; i >= 0 ; i--) {
+		
+		alert(cart[i].itemName+": "+cart[i].itemQty);
+	}
+}
+
+
+</script>
+
+</body>
