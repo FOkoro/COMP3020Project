@@ -22,7 +22,7 @@ var modal3= document.getElementById("myModal3");
 var modalPO= document.getElementById("myModalPO");
 var modalL= document.getElementById("myModalL");
 var modalC= document.getElementById("myModalL");
-var myModalPOMain= document.getElementById("myModalPOMain");
+var modalPOMain= document.getElementById("myModalPOMain");
 
 window.onclick = function(event) {
 	if (event.target == modal) {
@@ -45,6 +45,9 @@ window.onclick = function(event) {
 	}
 	else if (event.target == modalC) {
 		modalC.style.display = "none";
+	}
+	else if (event.target == myModalPOMain) {
+		modalPOMain.style.display = "none";
 	}
 }
 
@@ -190,7 +193,6 @@ function setCart()
 
 function loadUser()
 {
-	//alert();
 	usersName = ["Francis","Somto","Enesi","Hafiz"];
 
 	usersEmail =["okorof@myumanitoba.ca", "mbahs@myumanitoba.ca", "jattoe3@myumanitoba.ca", "lawalh@myumanitoba.ca"];
@@ -279,7 +281,7 @@ function printCart() {
 	// body...
 	for (var i = cart.length - 1; i >= 0 ; i--) {
 		
-		alert(cart[i].itemName+": "+cart[i].itemQty);
+		//alert(cart[i].itemName+": "+cart[i].itemQty);
 	}
 }
 
@@ -338,7 +340,7 @@ function login(id,idpass)
 	}
 	else
 	{
-		//alert(email+"  "+document.getElementById("tab5").name);
+		alertWarning();
 	}
 }
 
@@ -535,7 +537,6 @@ loadUser();
 function getPO(pos)
 {
 	var myPO= new Array();
-	alert(activePos);
 	//loadUser();
 	if(activePos == 0)
 	{
@@ -644,4 +645,22 @@ function TotalPO()
 function quickMathPO(){
 	
 	TotalPO();
+}
+
+function alertWarning(){
+	var myPas;
+	
+	document.getElementById("warning").style.visibility = "visible";
+	
+}
+
+function checkOut(){
+
+	if (subTotal() == 0) {
+		alert("Cart is Empty");
+	}
+	else
+	{
+		alert("Order Was Placed, you get the meal for free. Payment still to come");
+	}
 }

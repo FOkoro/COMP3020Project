@@ -18,6 +18,21 @@
 	<script src="mainScript.js"></script>
 	<button onclick="topFunction()" id="btnTop" title="Go to top">Top</button>
 
+			<div class="indexSideNav">
+
+			<div >				
+				<ul class="catigory-list" >
+					<li class="catigory-item"> <a class="c-i" href="#main-dish">Main Dish</a></li>
+					<li class="catigory-item"><a class="c-i" href="#vegiterian">Vegiterian</a></li>
+					<li class="catigory-item"> <a class="c-i" href="#sides">Sides</a></li>
+					<li class="catigory-item"><a class="c-i" href="#dessert">Dessert</a></li>
+					<li class="catigory-item"> <a class="c-i" href="#drinks">Drinks</a></li>
+				</ul>
+
+			</div>
+		</div>
+
+<div style="margin:0 auto; width: 1000px;height: 100%">
 	<!--Logo section-->
 	<div class="logo" style="margin-left: 12.5%" >
 		<img src="logo1C.png" width="100" height="100">
@@ -36,20 +51,6 @@
 					<li ><a id ="tab5" href="#" 			class="nav-item" name="Guest">Guest</a></li>
 					<li ><a id ="tab6" href="#cart" 		class="nav-item" onclick="displayCart();">Cart <div id="cont-Amount" value="0" style="position: absolute; display: inline-block;text-align: right;margin-left: 50px; border: solid black 1px;border-radius: 4px;background-color: blue; padding-left:5px; padding-right:5px; " ></div></a></li>
 				</ul>
-			</div>
-		</div>
-
-		<div class="indexSideNav">
-
-			<div >				
-				<ul class="catigory-list" >
-					<li class="catigory-item"> <a class="c-i" href="#main-dish">Main Dish</a></li>
-					<li class="catigory-item"><a class="c-i" href="#vegiterian">Vegiterian</a></li>
-					<li class="catigory-item"> <a class="c-i" href="#sides">Sides</a></li>
-					<li class="catigory-item"><a class="c-i" href="#dessert">Dessert</a></li>
-					<li class="catigory-item"> <a class="c-i" href="#drinks">Drinks</a></li>
-				</ul>
-
 			</div>
 		</div>
 
@@ -90,7 +91,7 @@
 						</div>
 						<div class="modal-txt-container">
 							<h3 class="modal-title"> Honey Mustard Grilled Chicken: $15</h3>
-							<p class="modal-info"> Meal like non other.<br>Ingredients:chicken, honey, onions.</p>
+							<p class="modal-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit accusamus quia repellendus modi perferendis nulla, nam autem iusto vel eos nesciunt, enim blanditiis illum. Fuga reprehenderit, eius expedita assumenda enim?</p>
 						</div>
 
 						<div class="btnHolder">
@@ -152,7 +153,7 @@
 						</div>
 						<div class="modal-txt-container">
 							<h3 class="modal-title">Jollof Rice: $10</h3>
-							<p class="modal-info"> Meal like non other.<br>Ingredients:chicken, rice, onions.</p>
+							<p class="modal-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit accusamus quia repellendus modi perferendis nulla, nam autem iusto vel eos nesciunt, enim blanditiis illum. Fuga reprehenderit, eius expedita assumenda enim?</p>
 						</div>
 
 						<div class="btnHolder">
@@ -215,7 +216,7 @@
 						</div>
 						<div class="modal-txt-container">
 							<h3 class="modal-title">Steamed Lobster Tail: $15</h3>
-							<p class="modal-info"> Meal like non other.<br>Ingredients:Lobster, rice, onions.</p>
+							<p class="modal-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit accusamus quia repellendus modi perferendis nulla, nam autem iusto vel eos nesciunt, enim blanditiis illum. Fuga reprehenderit, eius expedita assumenda enim?</p>
 						</div>
 
 						<div class="btnHolder">
@@ -278,7 +279,7 @@
 						</div>
 						<div class="modal-txt-container">
 							<h3 class="modal-title">Fried Rice: $10</h3>
-							<p class="modal-info"> Meal like non other.<br>Ingredients:Lobster, rice, onions.</p>
+							<p class="modal-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit accusamus quia repellendus modi perferendis nulla, nam autem iusto vel eos nesciunt, enim blanditiis illum. Fuga reprehenderit, eius expedita assumenda enim?</p>
 						</div>
 
 						<div class="btnHolder">
@@ -931,10 +932,10 @@
 						<span class="close" style="margin-top:-15px;margin-right:-5px;" onclick="closeModal('myModalL')">&times;</span>
 						<p>User Name<input style="float: right; margin-right:58px; " id="username" type="text"  value=""> </p>
 						<p>Password <input style="float: right; margin-right:68px; " id="password" type="password"  value=""> </p>
-						<p style="visibility:hidden;">*wrong username or password</p>
+						<p style="visibility:hidden;color: red;" id="warning">*wrong username or password</p>
 
 						<div style="width: 100%; height:30px;margin-top: 0%;">
-							<button class="button2" style="top:0; display: inline-block;" onclick="login('username','password');" >Log in</button>
+							<button class="button2" style="top:0; display: inline-block;" onclick="login('username','password')" >Log in</button>
 						</div>
 					</div>
 				</div>
@@ -954,7 +955,7 @@
 									</div>
 								</div>
 								<div class="foodInfo">
-									<h2>Food Title</h2>
+									<h2>Honey Mustard Grilled Chicken</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit accusamus quia repellendus modi perferendis nulla, nam autem iusto vel eos nesciunt, enim blanditiis illum. Fuga reprehenderit, eius expedita assumenda enim?</p>
 								</div>
 								<div class="buttonContainer">
@@ -984,7 +985,7 @@
 								</div>
 							</div>
 							<div class="foodInfo">
-								<h2>Food Title</h2>
+								<h2>Jollof Rice</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque animi similique, architecto hic sunt molestias dolor aliquid cupiditate et. Saepe amet cumque optio nisi temporibus deserunt nesciunt ut odit, expedita.</p>
 							</div>
 							<div class="buttonContainer">
@@ -1014,7 +1015,7 @@
 								</div>
 							</div>
 							<div class="foodInfo">
-								<h2>Food Title</h2>
+								<h2>Steamed Lobster Tail</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem at debitis illo pariatur aperiam ipsam aspernatur, autem nihil nam quam veniam laborum sunt, aliquid cum quos accusamus laboriosam adipisci quas.</p>
 							</div>
 							<div class="buttonContainer">
@@ -1044,7 +1045,7 @@
 								</div>
 							</div>
 							<div class="foodInfo">
-								<h2>Food Title</h2>
+								<h2>Fried Rice</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, doloremque distinctio non molestias, ut aperiam quisquam accusamus nesciunt veniam, deserunt quam hic veritatis tempora nemo. Id cum optio dolorum ipsa.</p>
 							</div>
 							<div class="buttonContainer">
@@ -1072,7 +1073,7 @@
 						<div class="checkOutHolder">Taxes :<div class="checkOutPrice" id="tax"> $0.00</div></div>
 						<div class="checkOutHolder" style="margin-top: solid black 1px;">Total :<div class="checkOutPrice" id="total"> $0.00</div></div>
 
-						<button class="button2" style="font-size:15px;width: 150px;float: right;margin-top:10px ;margin-right: 50px;">Proceed To Checkout</button>
+						<button class="button2" style="font-size:15px;width: 150px;float: right;margin-top:10px ;margin-right: 50px;" onclick="checkOut()">Proceed To Checkout</button>
 						
 					</div>
 				</div>
@@ -1092,17 +1093,17 @@
 									</div>
 								</div>
 								<div class="foodInfo">
-									<h2>Food Title</h2>
+									<h2>Honey Mustard Grilled Chicken</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit accusamus quia repellendus modi perferendis nulla, nam autem iusto vel eos nesciunt, enim blanditiis illum. Fuga reprehenderit, eius expedita assumenda enim?</p>
 								</div>
 								<div class="buttonContainer">
 									<div class="buttonSect">
 										<div style="display:'hidden';" class="sect">
-											<input  type="image" src="minus.png" class="qtyBut" name="#" disabled="yes" >
+											<input  type="image" src="minus.png" class="qtyBut" name="#" style="visibility: hidden;" >
 										</div>
 										<div class="sect" id="qtySect1PO">0</div>
 										<div  class="sect" visibility="hidden">
-											<input type="image" src="plus.png" class="qtyBut" disabled="yes" name="#" >
+											<input type="image" src="plus.png" class="qtyBut" name="#" style="visibility: hidden;" >
 										</div>
 										
 									</div>
@@ -1110,7 +1111,7 @@
 								<div class="priceContainer">
 									<div class="price" id="item1TPPO" style="margin-top: 52px">$15.00</div>
 								</div>
-								<div visibility="hidden" class="resetButtonContainer">
+								<div visibility="hidden" class="resetButtonContainer" style="visibility: hidden;">
 									<input type="image" class="delBut" src="delBut.jpg" name="#">
 								</div>
 							</div>
@@ -1122,17 +1123,17 @@
 								</div>
 							</div>
 							<div class="foodInfo">
-								<h2>Food Title</h2>
+								<h2>Jollof Rice</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque animi similique, architecto hic sunt molestias dolor aliquid cupiditate et. Saepe amet cumque optio nisi temporibus deserunt nesciunt ut odit, expedita.</p>
 							</div>
 							<div class="buttonContainer">
 								<div class="buttonSect">
 									<div visibility="hidden" class="sect">
-										<input type="image" src="minus.png" class="qtyBut" name="#">
+										<input type="image" src="minus.png" class="qtyBut" name="#" style="visibility: hidden;">
 									</div>
 									<div class="sect" id="qtySect2PO">0</div>
 									<div visibility="hidden" class="sect">
-										<input type="image" src="plus.png" class="qtyBut" name="#">
+										<input type="image" src="plus.png" class="qtyBut" name="#" style="visibility: hidden;">
 									</div>
 									
 								</div>
@@ -1140,8 +1141,8 @@
 							<div class="priceContainer">
 								<div class="price" id="item2TPPO" style="margin-top: 52px">$10.00</div>
 							</div>
-							<div visibility="hidden" class="resetButtonContainer" >
-								<input type="image" class="delBut" src="delBut.jpg" name="#">
+							<div visibility="hidden" class="resetButtonContainer" style="visibility: hidden;">
+								<input type="image" class="delBut" src="delBut.jpg" name="#" style="visibility: hidden;">
 							</div>
 						</div> 
 
@@ -1152,17 +1153,17 @@
 								</div>
 							</div>
 							<div class="foodInfo">
-								<h2>Food Title</h2>
+								<h2>Steamed Lobster Tail</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem at debitis illo pariatur aperiam ipsam aspernatur, autem nihil nam quam veniam laborum sunt, aliquid cum quos accusamus laboriosam adipisci quas.</p>
 							</div>
 							<div class="buttonContainer">
 								<div class="buttonSect">
 									<div visibility="hidden" class="sect">
-										<input type="image" src="minus.png" class="qtyBut" name="#">
+										<input type="image" src="minus.png" class="qtyBut" name="#" style="visibility: hidden;">
 									</div>
 									<div class="sect" id="qtySect3PO">0</div>
 									<div visibility="hidden" class="sect">
-										<input type="image" src="plus.png" class="qtyBut" name="#">
+										<input type="image" src="plus.png" class="qtyBut" name="#" style="visibility: hidden;">
 									</div>
 									
 								</div>
@@ -1171,7 +1172,7 @@
 								<div class="price" id="item3TPPO" style="margin-top: 52px">$15.00</div>
 							</div>
 							<div visibility="hidden" class="resetButtonContainer">
-								<input type="image" class="delBut" src="delBut.jpg" name="#">
+								<input type="image" class="delBut" src="delBut.jpg" name="#" style="visibility: hidden;">
 							</div>
 						</div> 
 
@@ -1182,17 +1183,17 @@
 								</div>
 							</div>
 							<div class="foodInfo">
-								<h2>Food Title</h2>
+								<h2>Fried Rice</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, doloremque distinctio non molestias, ut aperiam quisquam accusamus nesciunt veniam, deserunt quam hic veritatis tempora nemo. Id cum optio dolorum ipsa.</p>
 							</div>
 							<div class="buttonContainer">
 								<div class="buttonSect">
 									<div visibility="hidden" class="sect" >
-										<input type="image" src="minus.png" class="qtyBut" name="#">
+										<input type="image" src="minus.png" class="qtyBut" name="#" style="visibility: hidden;">
 									</div>
 									<div class="sect" id="qtySect4PO">0</div>
 									<div visibility="hidden" class="sect">
-										<input type="image" src="plus.png" class="qtyBut" name="#">
+										<input type="image" src="plus.png" class="qtyBut" name="#" style="visibility: hidden;">
 									</div>
 									
 								</div>
@@ -1201,7 +1202,7 @@
 								<div class="price" id="item4TPPO" style="margin-top: 52px">$10.00</div>
 							</div>
 							<div visibility="hidden" class="resetButtonContainer">
-								<input type="image" class="delBut" src="delBut.jpg" name="#">
+								<input type="image" class="delBut" src="delBut.jpg" name="#" style="visibility: hidden;">
 							</div>
 						</div>
 						</div>
@@ -1219,29 +1220,44 @@
 			</div>
 
 	</div>
+</div>
 
 	<script type="text/javascript">
-		
-	window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-		else if (event.target == modal1) {
-			modal1.style.display = "none";
-		}
-		else if (event.target == modal2) {
-			modal2.style.display = "none";
-		}
-		else if (event.target == modal3) {
-			modal3.style.display = "none";
-		}
-		else if (event.target == modalPO) {
-			modalPO.style.display = "none";
-		}
-		else if (event.target == modalL) {
-			modalL.style.display = "none";
-		}
+	var modal= document.getElementById("myModal");
+var modal1= document.getElementById("myModal1");
+var modal2= document.getElementById("myModal2");
+var modal3= document.getElementById("myModal3");
+var modalPO= document.getElementById("myModalPO");
+var modalL= document.getElementById("myModalL");
+var modalC= document.getElementById("myModalC");
+var modalPOMain= document.getElementById("myModalPOMain");	
+
+window.onclick = function(event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
 	}
+	else if (event.target == modal1) {
+		modal1.style.display = "none";
+	}
+	else if (event.target == modal2) {
+		modal2.style.display = "none";
+	}
+	else if (event.target == modal3) {
+		modal3.style.display = "none";
+	}
+	else if (event.target == modalPO) {
+		modalPO.style.display = "none";
+	}
+	else if (event.target == modalL) {
+		modalL.style.display = "none";
+	}
+	else if (event.target == modalC) {
+		modalC.style.display = "none";
+	}
+	else if (event.target == myModalPOMain) {
+		modalPOMain.style.display = "none";
+	}
+}
 
 	</script>
 </body>
