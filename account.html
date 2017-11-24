@@ -51,7 +51,7 @@
 					<input type="text" id=usrName name = "usersName" placeholder="Enter Your Name">	
 				</div>
 				<div class="inputContainer">
-					<input id="email1" type="text" name = "email" placeholder="Your Email?" value="" oninput="checkEmail('estat')">
+					<input id="email1" type="text" name = "email" placeholder="Your Email?" value="" oninput="tickX('estat');">
 					<div class="stat">
 						<img id="estat">
 					</div>
@@ -80,7 +80,44 @@
 
 		/*Pre Defined Emails in database already */
 		var emailArray =["okorof@myumanitoba.ca","jattoe3@myumanitoba.ca","mbahs@myumanitoba.ca","lawalh@myumanitoba.ca"];
+		var names= ["Francis","Jatto","Somto","Hafiz"];
 		var temp;
+
+		function isEqual(str1,str2)
+		{
+			var bool= false;
+			if (str1 == str2) {
+				bool=true;
+			}
+		}
+		function tickX(id){
+			
+			var user1 = document.getElementById("email1").value;
+			var found= false;
+
+			for (var i = emailArray.length - 1; i >= 0 && !found; i--) {
+				if(user1.length>0){
+					document.getElementById(id).style.display = "inline-block";
+					//alert(emailArray[i]+" "+user1);
+					if(user1 === emailArray[i]){
+						//alert("Help ME");
+						document.getElementById(id).style.display = "none";
+						document.getElementById(id).src = "cross.png";
+						document.getElementById(id).style.display = "inline-block";
+						found= true;
+					}
+					else
+					{
+						document.getElementById(id).src = "tick.png";
+					}
+				}
+				else{
+				document.getElementById(id).style.display = "none";
+				}
+			}
+
+		}
+
 		function checkPass(b){
 			var thesamePass;
 			var psw1 = document.getElementById("pass1").value;
