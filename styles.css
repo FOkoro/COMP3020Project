@@ -342,6 +342,7 @@ a.c-i:hover {
 .indexMainNav{
 	width: 100%;
 }
+
 .indexSideNav{
 	display: inline-block;
 	margin: 0;
@@ -355,7 +356,7 @@ a.c-i:hover {
 	position: absolute;
 	display: inline-block;
 
-	
+	margin-left: 12% auto;
 	padding: 0;
 	width: 1000px;
 	height: 1000px;
