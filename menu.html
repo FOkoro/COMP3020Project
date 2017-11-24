@@ -9,11 +9,13 @@
 	<!--<link rel="stylesheet" href="mainstyle.css">-->
 	<link rel="stylesheet" href="mainstyle.css">
 	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="styleCheckout.css">
 
 
 </head>
 
 <body>
+	<script src="mainScript.js"></script>
 	<button onclick="topFunction()" id="btnTop" title="Go to top">Top</button>
 	<!--Logo section-->
 	<div class="logo" style="margin-left: 12.5%" >
@@ -27,11 +29,11 @@
 			<div class="main-nav" style="margin:0 auto;" >
 				<ul class="main-nav-ul">
 					<li ><a id ="tab1" href="homepage.html" class="nav-item">Home</a></li>
-					<li ><a id ="tab2" href="index.html" 	class="nav-item" style="color:white;background:linear-gradient( #cfb283 20%,#a37c3e 80%)">Menu</a></li>
+					<li ><a id ="tab2" href="menu.html" 	class="nav-item" style="color:white;background:linear-gradient( #cfb283 20%,#a37c3e 80%)">Menu</a></li>
 					<li ><a id ="tab3" href="#"				class="nav-item" onclick="logginCheck()">Previous Orders</a></li>
 					<li ><a id ="tab4" href="#" 			class="nav-item">Coupons</a></li>
 					<li ><a id ="tab5" href="#" 			class="nav-item" name="Guest">Guest</a></li>
-					<li ><a id ="tab6" href="#cart" 		class="nav-item" onclick="printCart()">Cart <div id="cont-Amount" value="0" style="position: absolute; display: inline-block;text-align: right;margin-left: 50px; border: solid black 1px;border-radius: 4px;background-color: blue; padding-left:5px; padding-right:5px; " ></div></a></li>
+					<li ><a id ="tab6" href="#cart" 		class="nav-item" onclick="lunchModal('myModalC')">Cart <div id="cont-Amount" value="0" style="position: absolute; display: inline-block;text-align: right;margin-left: 50px; border: solid black 1px;border-radius: 4px;background-color: blue; padding-left:5px; padding-right:5px; " ></div></a></li>
 				</ul>
 			</div>
 		</div>
@@ -906,12 +908,14 @@
 
 				<div id="myModalPO" class="modal" >
 					<!-- Modal content -->
-					<div class="modal-content" style="background-color:  #a37c3e;width: 30%;height: 25%;padding-bottom: 0;">
+					
+					<div class="modal-content" style="background-color:  #a37c3e;width: 450px;height: 170px;padding-bottom: 0;">
+						<span class="close" onclick="closeModal('myModalPO')">&times;</span>
 						<p style="text-align: center;">You are not logged in. Would you like to </p>
 
 						<div style="width: 100%; height:30px;margin-top: 21%;">
 							<button class="button2" style="margin-left:0; display: inline-block;" onclick="swichToLogin()">Log In</button>
-							<button class="button2" style="margin: 0;margin-left:35%;display: inline-block;width:39%;" onclick="window.location.href='login.html'">Create Account</button>
+							<button class="button2" style="margin: 0;margin-left:35%;display: inline-block;width:39%;" onclick="window.location.href='account.html'">Create Account</button>
 						</div>
 					</div>
 				</div>
@@ -921,297 +925,177 @@
 
 				<div id="myModalL" class="modal" >
 					<!-- Modal content -->
-					<form class="modal-content" style="background-color:  #a37c3e;width: 26%;height: 23%;">
-						<p>User Name:<input id="username" type="text"  value=""> </p>
-						<p> Password : <input type="password"  value=""> </p>
+					
+					<div class="modal-content" style="background-color:  #a37c3e;width: 350px;height: 150px;">
+						<span class="close" onclick="closeModal('myModalL')">&times;</span>
+						<p>User Name<input style="float: right; margin-right:58px; " id="username" type="text"  value=""> </p>
+						<p>Password <input style="float: right; margin-right:58px; " id="password" type="password"  value=""> </p>
 						<p style="visibility:hidden;">*wrong username or password</p>
 
 						<div style="width: 100%; height:30px;margin-top: 0%;">
 							<button class="button2" style="top:0; display: inline-block;" onclick="login('username');" >Log in</button>
 						</div>
-					</form>
+					</div>
 				</div>
 				<!--Here is the modal for the login tab end-->
+
+				<!--Here is the modal for the cart tab-->
+
+				<div id="myModalC" class="modal" >
+					<!-- Modal content -->					
+					<div class="modal-content" style="background-color:  #a37c3e;">
+						<div class="foodItemContainer" id="item1">
+							<div class="foodImageOuterContainer">
+								<div class="foodImageInnerContainer">
+									<img src="HoneyMustardGrilledChicken.jpeg" alt="Honey Mustard Grilled Chicken" style="width: 100px;height: 100px">
+								</div>
+							</div>
+							<div class="foodInfo">
+								<h2>Food Title</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit accusamus quia repellendus modi perferendis nulla, nam autem iusto vel eos nesciunt, enim blanditiis illum. Fuga reprehenderit, eius expedita assumenda enim?</p>
+							</div>
+							<div class="buttonContainer">
+								<div class="buttonSect">
+									<div class="sect">
+										<input type="image" src="minus.png" class="qtyBut" name="#">
+									</div>
+									<div class="sect" id="qtySect">0</div>
+									<div class="sect">
+										<input type="image" src="plus.png" class="qtyBut" name="#">
+									</div>
+									
+								</div>
+							</div>
+							<div class="priceContainer">
+								<div class="price" style="margin-top: 52px">$9.00</div>
+							</div>
+							<div class="resetButtonContainer" onclick="cartDeleteItem('item1');">
+								<input type="image" class="delBut" src="delBut.jpg" name="#">
+							</div>
+						</div> 
+
+						<div class="foodItemContainer">
+							<div class="foodImageOuterContainer">
+								<div class="foodImageInnerContainer">
+									<img src="JollofRice.png" alt="Jollof Rice" style="width: 100px;height: 100px">
+								</div>
+							</div>
+							<div class="foodInfo">
+								<h2>Food Title</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque animi similique, architecto hic sunt molestias dolor aliquid cupiditate et. Saepe amet cumque optio nisi temporibus deserunt nesciunt ut odit, expedita.</p>
+							</div>
+							<div class="buttonContainer">
+								<div class="buttonSect">
+									<div class="sect">
+										<input type="image" src="minus.png" class="qtyBut" name="#">
+									</div>
+									<div class="sect" id="qtySect">0</div>
+									<div class="sect">
+										<input type="image" src="plus.png" class="qtyBut" name="#">
+									</div>
+									
+								</div>
+							</div>
+							<div class="priceContainer">
+								<div class="price" style="margin-top: 52px">$15.00</div>
+							</div>
+							<div class="resetButtonContainer">
+								<input type="image" class="delBut" src="delBut.jpg" name="#">
+							</div>
+						</div> 
+
+						<div class="foodItemContainer">
+							<div class="foodImageOuterContainer">
+								<div class="foodImageInnerContainer">
+									<img src="SteamedLobsterTail.jpg" alt="Steamed Lobster Tail" style="width: 100px;height: 100px">
+								</div>
+							</div>
+							<div class="foodInfo">
+								<h2>Food Title</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem at debitis illo pariatur aperiam ipsam aspernatur, autem nihil nam quam veniam laborum sunt, aliquid cum quos accusamus laboriosam adipisci quas.</p>
+							</div>
+							<div class="buttonContainer">
+								<div class="buttonSect">
+									<div class="sect">
+										<input type="image" src="minus.png" class="qtyBut" name="#">
+									</div>
+									<div class="sect" id="qtySect">0</div>
+									<div class="sect">
+										<input type="image" src="plus.png" class="qtyBut" name="#">
+									</div>
+									
+								</div>
+							</div>
+							<div class="priceContainer">
+								<div class="price" style="margin-top: 52px">$17.00</div>
+							</div>
+							<div class="resetButtonContainer">
+								<input type="image" class="delBut" src="delBut.jpg" name="#">
+							</div>
+						</div> 
+
+						<div class="foodItemContainer">
+							<div class="foodImageOuterContainer">
+								<div class="foodImageInnerContainer">
+									<img src="FriedRice.jpeg" alt="Fried Rice" style="width: 100px;height: 100px">
+								</div>
+							</div>
+							<div class="foodInfo">
+								<h2>Food Title</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, doloremque distinctio non molestias, ut aperiam quisquam accusamus nesciunt veniam, deserunt quam hic veritatis tempora nemo. Id cum optio dolorum ipsa.</p>
+							</div>
+							<div class="buttonContainer">
+								<div class="buttonSect">
+									<div class="sect">
+										<input type="image" src="minus.png" class="qtyBut" name="#">
+									</div>
+									<div class="sect" id="qtySect">0</div>
+									<div class="sect">
+										<input type="image" src="plus.png" class="qtyBut" name="#">
+									</div>
+									
+								</div>
+							</div>
+							<div class="priceContainer">
+								<div class="price" style="margin-top: 52px">$12.00</div>
+							</div>
+							<div class="resetButtonContainer">
+								<input type="image" class="delBut" src="delBut.jpg" name="#">
+							</div>
+						</div> 
+					</div>
+				</div>
+				<!--Here is the modal for the cart tab end-->
+
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 			
 			</div>
 
 	</div>
 
-
-<script>
-// Get the modal
-function lunchModal(id)
-{
-	document.getElementById(id).style.display="block";
-}
-function closeModal(id)
-{
-	document.getElementById(id).style.display="none"
-}
-
-var globalFoodModal;
-
-function setFoodModal(id,imgName,price,discription,qtyId){
-	//this should help create all modals
-}
-
-var modal= document.getElementById("myModal");
-var modal1= document.getElementById("myModal1");
-var modal2= document.getElementById("myModal2");
-var modal3= document.getElementById("myModal3");
-var modalPO= document.getElementById("myModalPO");
-var modalL= document.getElementById("myModalL");
-
-window.onclick = function(event) {
-	if (event.target == modal) {
-		modal.style.display = "none";
-	}
-	else if (event.target == modal1) {
-		modal1.style.display = "none";
-	}
-	else if (event.target == modal2) {
-		modal2.style.display = "none";
-	}
-	else if (event.target == modal3) {
-		modal3.style.display = "none";
-	}
-	else if (event.target == modalPO) {
-		modalPO.style.display = "none";
-	}
-	else if (event.target == modalL) {
-		modalL.style.display = "none";
-	}
-}
-
-
-//code for button increament
-
-function numUp(id,idM){
-
-    document.getElementById(id).stepUp(1);
-    document.getElementById(idM).stepUp(1);
-}
-
-function numDown(id,idM){
-    var temp= document.getElementById(id).value;
-    if ( temp > 0) {
-       document.getElementById(id).stepDown(1);
-       document.getElementById(idM).stepDown(1);
-    }
-}
-
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("btnTop").style.display = "block";
-    } else {
-        document.getElementById("btnTop").style.display = "none";
-    }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-
-
-var Cart;
-var viewCart;
-var usersName=["Somto"];
-var usersEmail= ["mbahs"];
-
-setCart();
-
-
-
-var food = {
-	itemName:"",
-	itemPrice:0,
-	itemQty:0
-};
-
-function food(itemName, itemPrice, itemQty)
-{
-	this.itemName = itemName;
-	this.itemPrice= parseInt(itemPrice);
-	this.itemQty = parseInt(itemQty);
-	var totalPrice = 0;
-	
-	this.getTotalPrice = function(){
-		return this.itemPice * this.itemQty;
-	};
-	this.plusQty = function(qty){
-
-		this.itemQty = parseInt(this.itemQty) + parseInt(qty);		
-		return this.itemQty;
-	};
-	
-	this.updateQty = function (value){
-		this.itemQty = value;
-	};
-	this.getName = function (){
-		return this.itemName;
-	};
-	
-	this.resetQty = function ()
-	{
-		this.itemQty = 0;
-	};
-	
-}
-
-function resetQty()
-{
-	cart[0].resetQty;
-	cart[1].resetQty;
-	cart[2].resetQty;
-	cart[3].resetQty;
-}
-
-
-//Function for adding items to a cart
-function setCart()
-{
-	cart = new Array();
-    viewCart = new Array();
-	cart[0] = new food("Honey Mustard Grilled Chicken",15,0);
-	cart[1] = new food("Jollof Rice",10,0);
-	cart[2] = new food("Steamed Lobster Tail",15,0);
-	cart[3] = new food("Fried Rice",10,0);	
-}
-
-function findFood(itemName)
-{
-	var i = 0;
-	var notFound = true;
-	
-	var temp = 0;
-	while((i<cart.length) && notFound)
-	{
-		if((cart[i].getName()) === itemName)
-		{
-			notFound = false;
-			temp = i;
-		}
-		i++;
-	}
-	return temp;
-}
-
-function reset(id)
-{
-	document.getElementById(id).value=0;
-}
-
-var totalInCart=0;
-
-function addItem(itemName, amount)
-{
-	var temp = findFood(itemName);
-	var quantity = cart[temp].plusQty(amount);
-	return quantity;
-}
-
-function changeQty(itemName, amount)
-{
-	var temp = findFood(itemName);
-	cart[temp].updateQty(amount);
-}
-
-function cartNum(itemName,amount){
-	var myVar= addItem(itemName,amount);
-	//var temp= totalCartQty();
-	totalInCart+= amount;
-
-	document.getElementById("cont-Amount").innerHTML= totalInCart;
-
-	return myVar;
-
-}
-
-
-function cartFunc(id,idM,itemName,modalID)
-{
-	var myValue=parseInt(document.getElementById(id).value);
-	cartNum(itemName,myValue);
-	//alert(cart[0].itemQty);
-
-
-	reset(id);
-	reset(idM);
-
-	//printCart();
-
-	document.getElementById(modalID).style.display = "none";
-
-}
-
-function isEmpty()
-{
-	var found= false;
-	for (var i = cart.length - 1; i >= 0 && !found; i--) {
+	<script type="text/javascript">
 		
-		if (cart[i].itemQty == 0) {
-			found=true;
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
 		}
-	}
-}
-
-function printCart() {
-	// body...
-	for (var i = cart.length - 1; i >= 0 ; i--) {
-		
-		alert(cart[i].itemName+": "+cart[i].itemQty);
-	}
-}
-
-function logginCheck()
-{
-	if(document.getElementById("tab5").name === "Guest")
-	{
-		lunchModal("myModalPO");
-	}
-	else
-	{
-		//doNoting
-	}
-}
-function swichToLogin()
-{
-	closeModal("myModalPO");
-	lunchModal("myModalL");
-
-}
-
-function login(id)
-{
-	var found=false;
-	var i;
-	var email= document.getElementById(id).value;
-	//alert(email+"  "+usersEmail[0]);
-	for (i = usersEmail.length - 1; i >= 0 && !found; i--) {
-		//alert(email+"  "+usersEmail[0]);
-		if(email == usersEmail[i])
-		{
-			//alert(email+"  "+usersEmail[0]);
-			found= true;
+		else if (event.target == modal1) {
+			modal1.style.display = "none";
+		}
+		else if (event.target == modal2) {
+			modal2.style.display = "none";
+		}
+		else if (event.target == modal3) {
+			modal3.style.display = "none";
+		}
+		else if (event.target == modalPO) {
+			modalPO.style.display = "none";
+		}
+		else if (event.target == modalL) {
+			modalL.style.display = "none";
 		}
 	}
 
-	if(found){
-		
-		document.getElementById("tab5").innerHTML = usersName[i+1];
-		document.getElementById("tab5").name= usersName[i+1];
-		closeModal("myModalL");
-	}
-	else
-	{
-		//alert(email+"  "+document.getElementById("tab5").name);
-	}
-}
-</script>
-
+	</script>
 </body>
+</html>
