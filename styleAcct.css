@@ -131,3 +131,10 @@ input{
 }
 
 /*Button Config End---------------------------------------*/
+.stat > img{
+    margin-top: -57px; 
+    margin-left: 220px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}

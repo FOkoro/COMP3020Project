@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="mainstyle.css">
 	<link rel="stylesheet" href="styleAcct.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	<script src="mainScript.js" type="text/javascript"></script> 
 </head>
 
 <body>
@@ -51,16 +51,22 @@
 					<input type="text" id=usrName name = "usersName" placeholder="Enter Your Name">	
 				</div>
 				<div class="inputContainer">
-					<input type="email" name = "email" placeholder="Your Email?">
+					<input id="email1" type="text" name = "email" placeholder="Your Email?" value="" oninput="checkEmail('estat')">
+					<div class="stat">
+						<img id="estat">
+					</div>
 				</div>
 				<div class="inputContainer">
 					<input type="tel" name = "phoneNo" placeholder="(xxx)-xxx-xxxx">	
 				</div>
 				<div class="inputContainer">
-					<input type="password" name = "password" placeholder="Enter Password">
+					<input id="pass1" type="password" name = "password" placeholder="Enter Password" value="" oninput="rel('pass1')">
 				</div>
 				<div class="inputContainer">
-					<input type="password" name = "cPassword" placeholder="Confirm Password">
+					<input id="pass2" type="password" name = "cPassword" placeholder="Confirm Password" value="" oninput="checkPass('sta')" disabled="yes" >
+					<div class="stat">
+						<img id="sta">
+					</div>
 				</div>
 				<!--<input type="submit" name="submit" value="Create Account">       "standard submit"-->
 				<p><button class="button button_success large_button">Create Account</button></p>
@@ -70,6 +76,85 @@
 
 	</div>	
 </body>
+<script>
 
+	/*Pre Defined Emails in database already */
+	var emailArray =["okorof@myumanitoba.ca","jattoe3@myumanitoba.ca","mbahs@myumanitoba.ca","lawalh@myumanitoba.ca"];
+	function rel(bid){
+	 document.getElementById(bid).disabled = falsess;	
+	}
+
+	function checkPass(b){
+		var thesamePass;
+		var psw1 = document.getElementById("pass1").value;
+		var psw2 = document.getElementById("pass2").value;
+		if(psw2.length>0){
+			document.getElementById(b).style.display = "inline-block"
+			if(psw1==psw2){
+				thesamePass = true;
+			}
+			else
+			{
+				thesamePass = false;
+			}
+			changeStat(b,thesamePass);
+		}
+		else{
+			document.getElementById(b).style.display = "none";
+		}
+	}
+	
+	function checkEmail(ca){
+		var e_mail = document.getElementById("email1").value;
+		if (e_mail.length>0){
+			document.getElementById(ca).style.display = "inline-block";
+			/*var emailArray = readTextFile("usersEmail.txt");*/
+			if(emailArray.length>0)
+			{
+				var notfound = true;
+				var i=0;
+				while((i<emailArray.length) && notfound )
+
+				    if(e_mail == emailArray[i])
+				    {
+				    	notfound = false;
+				    }
+				    else{
+				    	notfound= true;
+				    }
+				    i++;
+				    alert(notfound);
+				}
+				changeStat(ca,notFound);
+			}
+
+		}
+		else{
+
+			document.getElementById(ca).style.display = "none";
+		}
+		
+	}
+
+	function changeStat(a,aa)
+	{	
+		
+		if(typeof (aa) != 'undefined'){
+
+			if(aa){
+				document.getElementById(a).src="tick.png";
+			}
+			else{
+				
+				document.getElementById(a).src="cross.png";	
+
+			}
+		}
+	}
+
+	
+
+
+</script>
 </html>
 
