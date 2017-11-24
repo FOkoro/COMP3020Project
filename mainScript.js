@@ -86,6 +86,7 @@ var enesiPO;
 var hafizPO;
 var usersPass;
 var activeUsr;
+var activePos;
 
 var Cart;
 var viewCart;
@@ -182,8 +183,6 @@ function setCart()
 	hafizPO[1] = new food("Jollof Rice",10,8);
 	hafizPO[2] = new food("Steamed Lobster Tail",15,4);
 	hafizPO[3] = new food("Fried Rice",10,6);
-
-
 }
 
 
@@ -301,6 +300,24 @@ function swichToLogin()
 
 }
 
+loadPO{
+	loadUser();
+	if(activePos == 0)
+	{
+		cart= francisPO;
+	} else if(activePos == 1)
+	{
+		cart= somtoPO;
+	} else if(activePos == 2)
+	{
+		cart= enesiPO;
+	} else if(activePos == 3)
+	{
+		cart=hafizPO;
+	}
+	lunchModal("myModalPOMain");
+}
+
 
 function login(id,idpass)
 {
@@ -320,6 +337,7 @@ function login(id,idpass)
 				//alert(email+"  "+usersEmail[0]);
 				found= true;
 				activeUsr = found;
+				activePos = i;
 			}
 		}
 

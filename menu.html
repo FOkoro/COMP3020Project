@@ -17,6 +17,7 @@
 <body>
 	<script src="mainScript.js"></script>
 	<button onclick="topFunction()" id="btnTop" title="Go to top">Top</button>
+
 	<!--Logo section-->
 	<div class="logo" style="margin-left: 12.5%" >
 		<img src="logo1C.png" width="100" height="100">
@@ -28,10 +29,10 @@
 		<div class="indexMainNav" >
 			<div class="main-nav" style="margin:0 auto;" >
 				<ul class="main-nav-ul">
-					<li ><a id ="tab1" href="homepage.html" class="nav-item">Home</a></li>
+					<li ><a id ="tab1" href="index.html" class="nav-item">Home</a></li>
 					<li ><a id ="tab2" href="menu.html" 	class="nav-item" style="color:white;background:linear-gradient( #cfb283 20%,#a37c3e 80%)">Menu</a></li>
 					<li ><a id ="tab3" href="#"				class="nav-item" onclick="logginCheck()">Previous Orders</a></li>
-					<li ><a id ="tab4" href="#" 			class="nav-item">Coupons</a></li>
+					<li ><a id ="tab4" href="coupons.html" 			class="nav-item">Coupons</a></li>
 					<li ><a id ="tab5" href="#" 			class="nav-item" name="Guest">Guest</a></li>
 					<li ><a id ="tab6" href="#cart" 		class="nav-item" onclick="displayCart();">Cart <div id="cont-Amount" value="0" style="position: absolute; display: inline-block;text-align: right;margin-left: 50px; border: solid black 1px;border-radius: 4px;background-color: blue; padding-left:5px; padding-right:5px; " ></div></a></li>
 				</ul>
@@ -945,7 +946,7 @@
 					<!-- Modal content -->					
 					<div class="modal-content" style="background-color: #a37c3e;margin-top:10px;height:450px;width: 1100px">
 						<span class="close" style="margin-top:-15px;" onclick="closeModal('myModalC')">&times;</span>
-						<div style="width:95%;height:75%;border: solid red 2px;overflow-y:scroll;overflow-x: hidden;">
+						<div style="width:95%;height:75%;overflow-y:scroll;overflow-x: hidden;">
 							<div class="foodItemContainer" id="item1">
 								<div class="foodImageOuterContainer">
 									<div class="foodImageInnerContainer">
