@@ -60,10 +60,10 @@
 					<input type="tel" name = "phoneNo" placeholder="(xxx)-xxx-xxxx">	
 				</div>
 				<div class="inputContainer">
-					<input id="pass1" type="password" name = "password" placeholder="Enter Password" value="" oninput="rel('pass1')">
+					<input id="pass1" type="password" name = "password" placeholder="Enter Password" value="">
 				</div>
 				<div class="inputContainer">
-					<input id="pass2" type="password" name = "cPassword" placeholder="Confirm Password" value="" oninput="checkPass('sta')" disabled="yes" >
+					<input id="pass2" type="password" name = "cPassword" placeholder="Confirm Password" value="" oninput="checkPass('sta')" >
 					<div class="stat">
 						<img id="sta">
 					</div>
@@ -75,86 +75,83 @@
 		</div>
 
 	</div>	
-</body>
-<script>
 
-	/*Pre Defined Emails in database already */
-	var emailArray =["okorof@myumanitoba.ca","jattoe3@myumanitoba.ca","mbahs@myumanitoba.ca","lawalh@myumanitoba.ca"];
-	function rel(bid){
-	 document.getElementById(bid).disabled = falsess;	
-	}
+	<script>
 
-	function checkPass(b){
-		var thesamePass;
-		var psw1 = document.getElementById("pass1").value;
-		var psw2 = document.getElementById("pass2").value;
-		if(psw2.length>0){
-			document.getElementById(b).style.display = "inline-block"
-			if(psw1==psw2){
-				thesamePass = true;
-			}
-			else
-			{
-				thesamePass = false;
-			}
-			changeStat(b,thesamePass);
-		}
-		else{
-			document.getElementById(b).style.display = "none";
-		}
-	}
-	
-	function checkEmail(ca){
-		var e_mail = document.getElementById("email1").value;
-		if (e_mail.length>0){
-			document.getElementById(ca).style.display = "inline-block";
-			/*var emailArray = readTextFile("usersEmail.txt");*/
-			if(emailArray.length>0)
-			{
-				var notfound = true;
-				var i=0;
-				while((i<emailArray.length) && notfound )
-
-				    if(e_mail == emailArray[i])
-				    {
-				    	notfound = false;
-				    }
-				    else{
-				    	notfound= true;
-				    }
-				    i++;
-				    alert(notfound);
+		/*Pre Defined Emails in database already */
+		var emailArray =["okorof@myumanitoba.ca","jattoe3@myumanitoba.ca","mbahs@myumanitoba.ca","lawalh@myumanitoba.ca"];
+		var temp;
+		function checkPass(b){
+			var thesamePass;
+			var psw1 = document.getElementById("pass1").value;
+			var psw2 = document.getElementById("pass2").value;
+			if(psw2.length>0){
+				document.getElementById(b).style.display = "inline-block"
+				if(psw1==psw2){
+					thesamePass = true;
 				}
-				changeStat(ca,notFound);
-			}
-
-		}
-		else{
-
-			document.getElementById(ca).style.display = "none";
-		}
-		
-	}
-
-	function changeStat(a,aa)
-	{	
-		
-		if(typeof (aa) != 'undefined'){
-
-			if(aa){
-				document.getElementById(a).src="tick.png";
+				else
+				{
+					thesamePass = false;
+				}
+				changeStat(b,thesamePass);
 			}
 			else{
-				
-				document.getElementById(a).src="cross.png";	
-
+				document.getElementById(b).style.display = "none";
 			}
 		}
-	}
 
-	
+		function checkEmail(ca){
+			var e_mail = document.getElementById("email1").value;
+
+			if (e_mail.length>0){
+				document.getElementById(ca).style.display = "inline-block";
+				/*var emailArray = readTextFile("usersEmail.txt");*/
+				if(emailArray.length>0)
+				{
+
+					for(var i=0 ; i<emailArray.length ; i++)
+					{
+
+						if(e_mail == emailArray[i])
+						{
+							changeStat(ca,false);
+							alert(e_mail);
+						}
+						else{
+							changeStat(ca,true);
+						}
+					}
+				}
+
+			}
+			else{
+
+				document.getElementById(ca).style.display = "none";
+			}
+
+		}
+
+		function changeStat(a,aa)
+		{	
+
+			if(typeof (aa) != 'undefined'){
+
+				if(aa){
+					document.getElementById(a).src="tick.png";
+				}
+				else{
+
+					document.getElementById(a).src="cross.png";	
+
+				}
+			}
+		}
 
 
-</script>
+
+
+	</script>
+</body>
 </html>
 
