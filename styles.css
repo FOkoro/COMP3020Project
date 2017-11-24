@@ -20,7 +20,7 @@
   bottom: 100%;
   left: 0;
   right: 0;
-  background-color: #DAA520; /*gold*/
+  background-color: #a37c3e;
   overflow: hidden;
   width: 163px;
   height:0;
@@ -61,7 +61,7 @@
 
 /* Modal Content */
 .modal-content {
-	background-color: #fefefe;
+	background-color: #a37c3e;
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #888;
@@ -71,7 +71,7 @@
 
 /* The Close Button */
 .close {
-    color: #aaaaaa;
+    color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -204,7 +204,7 @@
 .button1:active {
   /*background-color: #3e8e41;*/
   box-shadow: 0 5px #665;
-  transform: translateY(4px);
+  transform: translateY(1px);
 }
 
 .button2 {
@@ -229,7 +229,7 @@
 .button2:active {
   /*background-color: #3e8e41;*/
   box-shadow: 0 5px #665;
-  transform: translateY(4px);
+  transform: translateY(1px);
 }
 
 
@@ -294,7 +294,7 @@
 	width: 1000px;
 	margin: 0 auto;
 	margin-bottom:10px;
-	color: black;
+	color: white;
 }
 
 #btnTop {
@@ -333,7 +333,6 @@ a.c-i:hover {
 
 
 .indexMainBody{
-	border:solid black 5px;
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -341,23 +340,21 @@ a.c-i:hover {
 }
 
 .indexMainNav{
-	border:solid blue 5px;
 	width: 100%;
 }
 .indexSideNav{
 	display: inline-block;
-	border:solid gold 5px;
 	margin: 0;
 	padding: 0;
-	width: 12%;
+	width: 12.5%;
 	height: 1000px;
+	
 }
 
 .indexBody{
 	position: absolute;
 	display: inline-block;
 
-	border: solid brown 5px;
 	
 	padding: 0;
 	width: 1000px;
