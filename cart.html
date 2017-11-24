@@ -33,6 +33,7 @@
         font-size:2em;
         border-radius:3px;
         color:white;
+        border-radius:20px;
      }
      
      .addBtn:hover{
@@ -49,6 +50,7 @@
         font-size:2em;
         border-radius:3px;
         color:white;
+        border-radius:20px;
      }
      
     .decBtn:hover{
@@ -67,6 +69,7 @@
         color:white;     
         margin-left:2px;
         margin-right:2px;
+        border-radius:20px;
      }
      
      #item{
@@ -106,6 +109,24 @@
 		clear:both;
       }
      
+     .hide{
+      float:right;
+      margin-left:100px;
+      background-color:red;
+      text-align:center;
+      color:white;
+      height:30px;
+      width:30px;
+      border-radius:15px;
+     }
+     
+     .hide p{
+     margin-top:6px;
+     }
+     
+     .hide:hover{
+      background-color:#CD6155;
+     }
      
      
    </style>
@@ -113,10 +134,12 @@
    </head>
 
    <body>
+     <div id="one">
      <div id="item">
        <div id="ctrl">
        <img src="http://sisijemimah.com/wp-content/uploads/2017/02/Nigerian-suya-recipe.jpg" height="100" width="140" style="float:left; margin:5px; margin-top: 20px; border-radius:5px;">
-       <p style="text-align:center; position:relative; top:25px; font-size:1.5em;">Suya</p>
+       <p style="text-align:center; position:relative; top:25px; font-size:1.5em;">Suya   Price: $<span id="price1">0</span></p>
+       <div id="hide1" class="hide"><p>X</p></div>
        <div class="addBtn" id="addBtn1">
        <p>+</p>
        </div>
@@ -125,12 +148,15 @@
        <p>-</p>
        </div>
        </div>
+       </div>
      </div>
      
+     <div id = "two">
      <div id="item">
        <div id="ctrl">
        <img src="https://www.kamdora.com/wp-content/uploads/2014/11/NKWOBI-360x240.jpg" height="100" width="140" style="float:left; margin:5px; margin-top: 20px; border-radius:5px;">
-       <p style="text-align:center; position:relative; top:25px; font-size:1.5em;">Nkwobi</p>
+       <p style="text-align:center; position:relative; top:25px; font-size:1.5em;">Nkwobi Price: $<span id="price2">0</span></p>
+       <div id="hide2" class="hide"><p>X</p></div>
        <div class="addBtn" id="addBtn2">
        <p>+</p>
        </div>
@@ -139,12 +165,15 @@
        <p>-</p>
        </div>
        </div>
+       </div>
      </div>
      
+      <div id = "three">
       <div id="item">
        <div id="ctrl">
        <img src="http://www.naijachef.com/wp-content/uploads/2016/01/Dodo-Kelewele-Pounded-Yam.jpg" height="100" width="140" style="float:left; margin:5px; margin-top: 20px; border-radius:5px;">
-       <p style="text-align:center; position:relative; top:25px; font-size:1.5em;">Pounded Yam</p>
+       <p style="text-align:center; position:relative; top:25px; font-size:1.5em;">Pounded Yam  Price: $<span id="price3">0</span></p>
+       <div id="hide3" class="hide"><p>X</p></div>
        <div class="addBtn" id="addBtn3">
        <p>+</p>
        </div>
@@ -153,20 +182,25 @@
        <p>-</p>
        </div>
        </div>
+       </div>
      </div>
      
+     
+      <div id = "four">
       <div id="item">
        <div id="ctrl">
        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlO7xbZLVVyH03awwtofXlD47mSPPTnWN2jfGDyO5ppG4jy1cNgA" height="100" width="140" style="float:left; margin:5px; margin-top: 20px; border-radius:5px;">
-       <p style="text-align:center; position:relative; top:25px; font-size:1.5em;">Jollof Rice and Plantain</p>
+       <p style="text-align:center; position:relative; top:25px; font-size:1.5em;">Jollof Rice and Plantain Price: $<span id="price4">0</span></p>
+       <div id="hide4" class="hide"><p>X</p></div>
        <div class="addBtn" id="addBtn4">
        <p>+</p>
        </div>
        <div class="amt" id="amt4">0</div>
        <div class="decBtn" id="decBtn4">
        <p>-</p>
+       </div>  
        </div>
-       </div>
+     </div>
      </div>
      
           <p style="font-size:1.4em; margin:5px; margin-top:50px;">The Summary of your Cart is :</p>
@@ -184,19 +218,55 @@
      
      <script>   
       /*Item 1*/
+      var hd1 = 1;
+      var hd2 = 1;
+      var hd3 = 1;
+      var hd4 = 1;
+      
+      
+      $(document).ready(function(){
+         $("#hide1").click(function(){
+    		$("#one").hide();
+            hd1--;
+
+		});
+      
+         $("#hide2").click(function(){
+    		$("#two").hide();
+            hd2--;
+		});
+        
+         $("#hide3").click(function(){
+    		$("#three").hide();
+            hd3--;
+		});
+        
+         $("#hide4").click(function(){
+    		$("#four").hide();
+            hd4--;
+		});
+      });  
+       
+      
          $(document).ready(function(){
          
          $(".subTotal").hide();
          $("#conPay").hide();
            var num = $("#amt1").text();
+           var totP = $("#price1").text();
           $("#addBtn1").click(function(){
                	num++;
+                totP = num * 10;
+            $("#price1").text(totP);
             $("#amt1").text(num);
     		  });
            
           $("#decBtn1").click(function(){
                if(num > 0){
-               	num--;}
+               	num--;
+                totP = totP - 10;                
+                }
+            $("#price1").text(totP);
             $("#amt1").text(num);
     		  });
 
@@ -206,14 +276,20 @@
          $(document).ready(function(){
          
            var num = $("#amt3").text();
+           var totP = $("#price3").text();
           $("#addBtn3").click(function(){
                	num++;
+            totP = num * 10;
+            $("#price3").text(totP);
             $("#amt3").text(num);
     		  });
            
           $("#decBtn3").click(function(){
                if(num > 0){
-               	num--;}
+               	num--;
+                totP = totP - 10;
+                }
+            $("#price3").text(totP);
             $("#amt3").text(num);
     		  });
 
@@ -222,14 +298,20 @@
          $(document).ready(function(){
          
            var num = $("#amt4").text();
+           var totP = $("#price4").text();
           $("#addBtn4").click(function(){
                	num++;
+                totP = num * 10;
+            $("#price4").text(totP)
             $("#amt4").text(num);
     		  });
            
           $("#decBtn4").click(function(){
                if(num > 0){
-               	num--;}
+               	num--;
+                totP = totP - 10;
+                }
+            $("#price4").text(totP);
             $("#amt4").text(num);
     		  });
 
@@ -240,14 +322,20 @@
 
          $(document).ready(function(){
            var num = $("#amt2").text();
+           var totP = $("#price2").text();
           $("#addBtn2").click(function(){
                	num++;
+                totP = num * 10;
+            $("#price2").text(totP)
             $("#amt2").text(num);
     		  });
            
           $("#decBtn2").click(function(){
                if(num > 0){
-               	num--;}
+               	num--;
+                totP = totP - 10;
+                }
+            $("#price2").text(totP);
             $("#amt2").text(num);
     		  });
               
@@ -258,11 +346,32 @@
               
           $("#clickTotal").click(function(){
           
-          var total =  parseInt($("#amt2").text());
+          var total2 =  parseInt($("#amt2").text());
+          
+          if(hd2 < 1){
+          	total2 = parseInt(0);
+            
+          }          
+          
           var total1 = parseInt($("#amt1").text());
-          var total2 = parseInt($("#amt3").text());
-          var total3 = parseInt($("#amt4").text());
-          var overTotal = total+total1+total2+total3;
+          
+          if(hd1 < 1){
+          	total1 = 0;
+          }
+          
+          var total3 = parseInt($("#amt3").text());
+          
+          if(hd3 < 1){
+          	total3 = 0;
+          }          
+          
+          var total4 = parseInt($("#amt4").text());
+          
+         if(hd4 < 1){
+          	total4 = 0;
+          }
+          
+          var overTotal = total4+total1+total2+total3;
           var totalOrders = overTotal*10;
           $("#total").text(totalOrders);
           var tax = totalOrders * 0.13;
@@ -278,6 +387,11 @@
 
 
  		 });
+         
+         
+         
+
+         
        
      </script>
 

@@ -33,7 +33,7 @@
 					<li ><a id ="tab3" href="#"				class="nav-item" onclick="logginCheck()">Previous Orders</a></li>
 					<li ><a id ="tab4" href="#" 			class="nav-item">Coupons</a></li>
 					<li ><a id ="tab5" href="#" 			class="nav-item" name="Guest">Guest</a></li>
-					<li ><a id ="tab6" href="#cart" 		class="nav-item" onclick="lunchModal('myModalC')">Cart <div id="cont-Amount" value="0" style="position: absolute; display: inline-block;text-align: right;margin-left: 50px; border: solid black 1px;border-radius: 4px;background-color: blue; padding-left:5px; padding-right:5px; " ></div></a></li>
+					<li ><a id ="tab6" href="#cart" 		class="nav-item" onclick="displayCart();">Cart <div id="cont-Amount" value="0" style="position: absolute; display: inline-block;text-align: right;margin-left: 50px; border: solid black 1px;border-radius: 4px;background-color: blue; padding-left:5px; padding-right:5px; " ></div></a></li>
 				</ul>
 			</div>
 		</div>
@@ -927,13 +927,13 @@
 					<!-- Modal content -->
 					
 					<div class="modal-content" style="background-color:  #a37c3e;width: 350px;height: 150px;">
-						<span class="close" onclick="closeModal('myModalL')">&times;</span>
+						<span class="close" style="margin-top:-15px;margin-right:-5px;" onclick="closeModal('myModalL')">&times;</span>
 						<p>User Name<input style="float: right; margin-right:58px; " id="username" type="text"  value=""> </p>
-						<p>Password <input style="float: right; margin-right:58px; " id="password" type="password"  value=""> </p>
+						<p>Password <input style="float: right; margin-right:68px; " id="password" type="password"  value=""> </p>
 						<p style="visibility:hidden;">*wrong username or password</p>
 
 						<div style="width: 100%; height:30px;margin-top: 0%;">
-							<button class="button2" style="top:0; display: inline-block;" onclick="login('username');" >Log in</button>
+							<button class="button2" style="top:0; display: inline-block;" onclick="login('username','password');" >Log in</button>
 						</div>
 					</div>
 				</div>
@@ -943,41 +943,43 @@
 
 				<div id="myModalC" class="modal" >
 					<!-- Modal content -->					
-					<div class="modal-content" style="background-color:  #a37c3e;">
-						<div class="foodItemContainer" id="item1">
-							<div class="foodImageOuterContainer">
-								<div class="foodImageInnerContainer">
-									<img src="HoneyMustardGrilledChicken.jpeg" alt="Honey Mustard Grilled Chicken" style="width: 100px;height: 100px">
+					<div class="modal-content" style="background-color: #a37c3e;margin-top:10px;height:450px;width: 1100px">
+						<span class="close" style="margin-top:-15px;" onclick="closeModal('myModalC')">&times;</span>
+						<div style="width:95%;height:75%;border: solid red 2px;overflow-y:scroll;overflow-x: hidden;">
+							<div class="foodItemContainer" id="item1">
+								<div class="foodImageOuterContainer">
+									<div class="foodImageInnerContainer">
+										<img src="HoneyMustardGrilledChicken.jpeg" alt="Honey Mustard Grilled Chicken" style="width: 120px;height: 120px">
+									</div>
+								</div>
+								<div class="foodInfo">
+									<h2>Food Title</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit accusamus quia repellendus modi perferendis nulla, nam autem iusto vel eos nesciunt, enim blanditiis illum. Fuga reprehenderit, eius expedita assumenda enim?</p>
+								</div>
+								<div class="buttonContainer">
+									<div class="buttonSect">
+										<div class="sect" onclick="cartDecrese('qtySect1','item1TP','Honey Mustard Grilled Chicken')">
+											<input type="image" src="minus.png" class="qtyBut" name="#" >
+										</div>
+										<div class="sect" id="qtySect1">0</div>
+										<div class="sect" onclick="cartIncrese('qtySect1','item1TP','Honey Mustard Grilled Chicken')">
+											<input type="image" src="plus.png" class="qtyBut" name="#" >
+										</div>
+										
+									</div>
+								</div>
+								<div class="priceContainer">
+									<div class="price" id="item1TP" style="margin-top: 52px">$15.00</div>
+								</div>
+								<div class="resetButtonContainer" onclick="cartDeleteItem('item1','Honey Mustard Grilled Chicken');">
+									<input type="image" class="delBut" src="delBut.jpg" name="#">
 								</div>
 							</div>
-							<div class="foodInfo">
-								<h2>Food Title</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit accusamus quia repellendus modi perferendis nulla, nam autem iusto vel eos nesciunt, enim blanditiis illum. Fuga reprehenderit, eius expedita assumenda enim?</p>
-							</div>
-							<div class="buttonContainer">
-								<div class="buttonSect">
-									<div class="sect">
-										<input type="image" src="minus.png" class="qtyBut" name="#">
-									</div>
-									<div class="sect" id="qtySect">0</div>
-									<div class="sect">
-										<input type="image" src="plus.png" class="qtyBut" name="#">
-									</div>
-									
-								</div>
-							</div>
-							<div class="priceContainer">
-								<div class="price" style="margin-top: 52px">$9.00</div>
-							</div>
-							<div class="resetButtonContainer" onclick="cartDeleteItem('item1');">
-								<input type="image" class="delBut" src="delBut.jpg" name="#">
-							</div>
-						</div> 
-
-						<div class="foodItemContainer">
+							
+							<div class="foodItemContainer" id="item2">
 							<div class="foodImageOuterContainer">
 								<div class="foodImageInnerContainer">
-									<img src="JollofRice.png" alt="Jollof Rice" style="width: 100px;height: 100px">
+									<img src="JollofRice.png" alt="Jollof Rice" style="width: 120px;height: 120px">
 								</div>
 							</div>
 							<div class="foodInfo">
@@ -986,28 +988,28 @@
 							</div>
 							<div class="buttonContainer">
 								<div class="buttonSect">
-									<div class="sect">
+									<div class="sect" onclick="cartDecrese('qtySect2','item2TP','Jollof Rice')">
 										<input type="image" src="minus.png" class="qtyBut" name="#">
 									</div>
-									<div class="sect" id="qtySect">0</div>
-									<div class="sect">
+									<div class="sect" id="qtySect2">0</div>
+									<div class="sect" onclick="cartIncrese('qtySect2','item2TP','Jollof Rice')">
 										<input type="image" src="plus.png" class="qtyBut" name="#">
 									</div>
 									
 								</div>
 							</div>
 							<div class="priceContainer">
-								<div class="price" style="margin-top: 52px">$15.00</div>
+								<div class="price" id="item2TP" style="margin-top: 52px">$10.00</div>
 							</div>
-							<div class="resetButtonContainer">
+							<div class="resetButtonContainer" onclick="cartDeleteItem('item2','Jollof Rice');">
 								<input type="image" class="delBut" src="delBut.jpg" name="#">
 							</div>
 						</div> 
 
-						<div class="foodItemContainer">
-							<div class="foodImageOuterContainer">
+						<div class="foodItemContainer" id="item3">
+							<div class="foodImageOuterContainer" >
 								<div class="foodImageInnerContainer">
-									<img src="SteamedLobsterTail.jpg" alt="Steamed Lobster Tail" style="width: 100px;height: 100px">
+									<img src="SteamedLobsterTail.jpg" alt="Steamed Lobster Tail" style="width: 120px;height: 120px">
 								</div>
 							</div>
 							<div class="foodInfo">
@@ -1016,28 +1018,28 @@
 							</div>
 							<div class="buttonContainer">
 								<div class="buttonSect">
-									<div class="sect">
+									<div class="sect" onclick="cartDecrese('qtySect3','item3TP','Steamed Lobster Tail')">
 										<input type="image" src="minus.png" class="qtyBut" name="#">
 									</div>
-									<div class="sect" id="qtySect">0</div>
-									<div class="sect">
+									<div class="sect" id="qtySect3">0</div>
+									<div class="sect" onclick="cartIncrese('qtySect3','item3TP','Steamed Lobster Tail')">
 										<input type="image" src="plus.png" class="qtyBut" name="#">
 									</div>
 									
 								</div>
 							</div>
 							<div class="priceContainer">
-								<div class="price" style="margin-top: 52px">$17.00</div>
+								<div class="price" id="item3TP" style="margin-top: 52px">$15.00</div>
 							</div>
-							<div class="resetButtonContainer">
+							<div class="resetButtonContainer" onclick="cartDeleteItem('item3','Steamed Lobster Tail');">
 								<input type="image" class="delBut" src="delBut.jpg" name="#">
 							</div>
 						</div> 
 
-						<div class="foodItemContainer">
+						<div class="foodItemContainer"  id="item4">
 							<div class="foodImageOuterContainer">
 								<div class="foodImageInnerContainer">
-									<img src="FriedRice.jpeg" alt="Fried Rice" style="width: 100px;height: 100px">
+									<img src="FriedRice.jpeg" alt="Fried Rice" style="width: 120px;height: 120px">
 								</div>
 							</div>
 							<div class="foodInfo">
@@ -1046,23 +1048,31 @@
 							</div>
 							<div class="buttonContainer">
 								<div class="buttonSect">
-									<div class="sect">
+									<div class="sect" onclick="cartDecrese('qtySect4','item4TP','Fried Rice')">
 										<input type="image" src="minus.png" class="qtyBut" name="#">
 									</div>
-									<div class="sect" id="qtySect">0</div>
-									<div class="sect">
+									<div class="sect" id="qtySect4">0</div>
+									<div class="sect" onclick="cartIncrese('qtySect4','item4TP','Fried Rice')">
 										<input type="image" src="plus.png" class="qtyBut" name="#">
 									</div>
 									
 								</div>
 							</div>
 							<div class="priceContainer">
-								<div class="price" style="margin-top: 52px">$12.00</div>
+								<div class="price" id="item4TP" style="margin-top: 52px">$10.00</div>
 							</div>
-							<div class="resetButtonContainer">
+							<div class="resetButtonContainer" onclick="cartDeleteItem('item4','Fried Rice');">
 								<input type="image" class="delBut" src="delBut.jpg" name="#">
 							</div>
-						</div> 
+						</div>
+						</div>
+
+						<div class="checkOutHolder">Subtotal :<div class="checkOutPrice" id="subTotal"> $0.00</div></div>
+						<div class="checkOutHolder">Taxes :<div class="checkOutPrice" id="tax"> $0.00</div></div>
+						<div class="checkOutHolder" style="margin-top: solid black 1px;">Total :<div class="checkOutPrice" id="total"> $0.00</div></div>
+
+						<button class="button2" style="font-size:15px;width: 150px;float: right;margin-top:10px ;margin-right: 50px;">Proceed To Checkout</button>
+						
 					</div>
 				</div>
 				<!--Here is the modal for the cart tab end-->
