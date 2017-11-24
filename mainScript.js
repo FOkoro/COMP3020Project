@@ -22,6 +22,7 @@ var modal3= document.getElementById("myModal3");
 var modalPO= document.getElementById("myModalPO");
 var modalL= document.getElementById("myModalL");
 var modalC= document.getElementById("myModalL");
+var myModalPOMain= document.getElementById("myModalPOMain");
 
 window.onclick = function(event) {
 	if (event.target == modal) {
@@ -290,7 +291,7 @@ function logginCheck()
 	}
 	else
 	{
-		//doNoting
+		displayPO();
 	}
 }
 function swichToLogin()
@@ -300,23 +301,7 @@ function swichToLogin()
 
 }
 
-loadPO{
-	loadUser();
-	if(activePos == 0)
-	{
-		cart= francisPO;
-	} else if(activePos == 1)
-	{
-		cart= somtoPO;
-	} else if(activePos == 2)
-	{
-		cart= enesiPO;
-	} else if(activePos == 3)
-	{
-		cart=hafizPO;
-	}
-	lunchModal("myModalPOMain");
-}
+
 
 
 function login(id,idpass)
@@ -366,6 +351,7 @@ function cartDeleteItem(id,itemName){
 	totalInCart = totalInCart - cart[pos].itemQty;
 	cart[pos].resetQty();
 	document.getElementById("cont-Amount").innerHTML= totalInCart;
+	quickMath();
 
 }
 
@@ -382,6 +368,7 @@ function cartIncrese(idNum,idPrice,itemName){
 	document.getElementById("cont-Amount").innerHTML= totalInCart;
 	document.getElementById(idNum).innerHTML = number;
 	cartItemTotal(idPrice,itemName);
+	quickMath();
 }
 
 function cartDecrese(idNum,idPrice,itemName){
@@ -396,6 +383,7 @@ function cartDecrese(idNum,idPrice,itemName){
 	document.getElementById("cont-Amount").innerHTML= totalInCart;
 	document.getElementById(idNum).innerHTML = number;
 	cartItemTotal(idPrice,itemName);
+	quickMath();
 }
 //reduce cart amount
 
@@ -463,17 +451,20 @@ function displayCart()
 	lunchModal('myModalC');
 }
 
-var sub_total=0;
-var tax=0;
-function subTotal(){
 
+function subTotal(){
+	var sub_total=0;
+	
 	for (var i = cart.length - 1; i >= 0; i--) {
 		sub_total+= cart[i].itemQty * cart[i].itemPrice;
 	}
 	document.getElementById("subTotal").innerHTML = "$"+sub_total+".00";
+	return sub_total;
 }
 function Tax()
 {
+	var sub_total=subTotal();
+	var tax=0;
 	tax= sub_total * 0.10;
 	if(tax==0)
 	{
@@ -486,9 +477,12 @@ function Tax()
 		document.getElementById("tax").innerHTML = "$"+tax+"0";
 	}
 	//document.getElementById("tax").innerHTML = tax;
+	return tax;
 }
 function Total()
 {
+	var sub_total=subTotal();
+	var tax=Tax();
 	var total= sub_total+tax;
 	if(sub_total % 2 == 0)
 	{
@@ -499,10 +493,10 @@ function Total()
 		document.getElementById("total").innerHTML = "$"+total+"0";
 	}
 	//document.getElementById("total").innerHTML = total;
+
 }
 function quickMath(){
-	subTotal();
-	Tax();
+	
 	Total();
 }
 
@@ -519,30 +513,135 @@ function writeTextFile(filepath, output) {
 	txtFile.close();
 
 }
+function loadPO(){
+	loadUser();
+	if(activePos == 0)
+	{
+		cart= francisPO;
+	} else if(activePos == 1)
+	{
+		cart= somtoPO;
+	} else if(activePos == 2)
+	{
+		cart= enesiPO;
+	} else if(activePos == 3)
+	{
+		cart=hafizPO;
+	}
+	lunchModal("myModalPOMain");
+}
 
-function readTextFile(filepath) {
-
-
-
-/*
-	alert(filepath);
-	var tempArray= new Array()
-	alert(filepath);
-
-	var txtFile;
-	txtFile= new File([""],txtFile);
-	alert(txtFile);
-	txtFile.open("r");
-	alert(txtFile);
-	var counter=0;
-	while (!txtFile.eof) {
-
-		// read each line of text
-
-		tempArray[counter]= txtFile.readln();
-		counter ++;
+loadUser();
+function getPO(pos)
+{
+	var myPO= new Array();
+	alert(activePos);
+	//loadUser();
+	if(activePos == 0)
+	{
+		myPO= francisPO;
+	}
+	 else if(activePos == 1)
+	{
+		myPO= somtoPO;
+	}
+	 else if(activePos == 2)
+	{
+		myPO= enesiPO;
+	}
+	 else if(activePos == 3)
+	{
+		myPO=hafizPO;
 	}
 
-	return tempArray;*/
+	return myPO;
+}
+function displayPO()
+{
+	
+	var myPO = getPO(activePos);
+	//loadUser();
+	if (myPO[0].itemQty == 0) {
+		document.getElementById("item1PO").style.display="none";
+	}else{
+		document.getElementById("item1PO").style.display="inline-block";
+	}
+	if (myPO[1].itemQty == 0) {
+		document.getElementById("item2PO").style.display="none";
+	}else{
+		document.getElementById("item2PO").style.display="inline-block";
+	}
+	if (myPO[2].itemQty == 0) {
+		document.getElementById("item3PO").style.display="none";
+	}else{
+		document.getElementById("item3PO").style.display="inline-block";
+	}
+	if (myPO[3].itemQty == 0) {
+		document.getElementById("item4PO").style.display="none";
+	}else{
+		document.getElementById("item4PO").style.display="inline-block";
+	}
 
+	var number =myPO[0].itemQty * myPO[0].itemPrice;
+	document.getElementById("item1TPPO").innerHTML = "$"+number+".00";
+	document.getElementById("qtySect1PO").innerHTML = myPO[0].itemQty;
+
+	var number =myPO[1].itemQty * myPO[1].itemPrice;
+	document.getElementById("item2TPPO").innerHTML = "$"+number+".00";
+	document.getElementById("qtySect2PO").innerHTML = myPO[1].itemQty;
+
+	var number =myPO[2].itemQty * myPO[2].itemPrice;
+	document.getElementById("item3TPPO").innerHTML = "$"+number+".00";
+	document.getElementById("qtySect3PO").innerHTML = myPO[2].itemQty;
+
+	var number =myPO[3].itemQty * myPO[3].itemPrice;
+	document.getElementById("item4TPPO").innerHTML = "$"+number+".00";
+	document.getElementById("qtySect4PO").innerHTML = myPO[3].itemQty;
+	//alert(101);
+	quickMathPO();
+	lunchModal('myModalPOMain');
+}
+
+function subTotalPO(){
+	var sub_totalPO=0;
+	var myPO= getPO(activePos);
+	for (var i = myPO.length - 1; i >= 0; i--) {
+		sub_totalPO+= myPO[i].itemQty * myPO[i].itemPrice;
+	}
+	document.getElementById("subTotalPO").innerHTML = "$"+sub_totalPO+".00";
+	return sub_totalPO;
+}
+function TaxPO()
+{
+	var sub_totalPO=subTotalPO();
+	var taxPO=0;
+	tax= sub_totalPO * 0.10;
+	if(sub_totalPO % 2 == 0)
+	{
+		document.getElementById("taxPO").innerHTML = "$"+taxPO+".00";
+	}
+	else if(sub_totalPO % 2 == 1){
+		document.getElementById("taxPO").innerHTML = "$"+taxPO+"0";
+	}
+	//document.getElementById("tax").innerHTML = tax;
+	return taxPO;
+}
+function TotalPO()
+{
+	var sub_totalPO=subTotalPO();
+	var taxPO=TaxPO();
+	var totalPO= sub_totalPO+taxPO;
+	if(sub_totalPO % 2 == 0)
+	{
+		document.getElementById("totalPO").innerHTML = "$"+totalPO+".00";
+	}
+	else
+	{
+		document.getElementById("totalPO").innerHTML = "$"+totalPO+"0";
+	}
+	//document.getElementById("total").innerHTML = total;
+}
+function quickMathPO(){
+	
+	TotalPO();
 }
