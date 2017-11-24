@@ -2,7 +2,7 @@
 	width:1050px;
 	height:120px;
 	display: inline-block;
-	background: #DAA520;
+	background: #1e1e1e;
 	position: relative;
 
 }
@@ -19,6 +19,7 @@
 }
 
 .foodInfo{
+	color: white;
 	margin-left: 130px;
 	position: absolute;
 	width: 600px;
@@ -64,6 +65,7 @@
 }
 
 .price{
+	color: white;
 	width: 80px;
 	height: 20px;
 }
@@ -77,6 +79,7 @@
 }
 
 .sect{
+	color: white;
 	display: inline-block;
 }
 
