@@ -66,7 +66,7 @@
 					<input id="tel" type="tel" name = "phoneNo" placeholder="(xxx)-xxx-xxxx">	
 				</div>
 				<div class="inputContainer">
-					<input id="pass1" type="password" name = "password" placeholder="Enter Password" value="">
+					<input id="pass1" type="password" name = "password" placeholder="Enter Password" value="" oninput="checkPass('sta')">
 				</div>
 				<div class="inputContainer">
 					<input id="pass2" type="password" name = "cPassword" placeholder="Confirm Password" value="" oninput="checkPass('sta')" >
@@ -75,7 +75,7 @@
 					</div>
 				</div>
 				<!--<input type="submit" name="submit" value="Create Account">       "standard submit"-->
-				<p><button class="button5 button_success large_button" onclick="getAccInfo()">Create Account</button></p>
+				<p><button class="button5 button_success large_button" onclick="createAccount()">Create Account</button></p>
 
 				
 
@@ -390,187 +390,48 @@
 	</div>
 	<!--Here is the modal for the cart tab end-->
 
+	<p id="demo"></p>
 </div>	
 
+<script src="accScript.js"></script>
+
 <script>
+	var modal= document.getElementById("myModal");
+	var modal1= document.getElementById("myModal1");
+	var modal2= document.getElementById("myModal2");
+	var modal3= document.getElementById("myModal3");
+	var modalPO= document.getElementById("myModalPO");
+	var modalL= document.getElementById("myModalL");
+	var modalC= document.getElementById("myModalC");
+	var modalPOMain= document.getElementById("myModalPOMain");	
 
-	/*Pre Defined Emails in database already */
-	var emailArray =["okorof@myumanitoba.ca","jattoe3@myumanitoba.ca","mbahs@myumanitoba.ca","lawalh@myumanitoba.ca"];
-	var names= ["Francis","Jatto","Somto","Hafiz"];
-	var temp;
-	var thesamePass;
-	var psswd;
-	/*Storage-----------------------------*/
-
-	function getAccInfo()
-	{
-		var fullName   = document.getElementById("usrName").value;
-		var usrEmail   = document.getElementById("email1").value;
-		var usrPhoneNo = document.getElementById("tel").value;
-		var usrPass;
-		if(thesamePass)
-		{
-			usrPass    = document.getElementById("pass2").value;
-			storeAccInfo(fullName,usrEmail,usrPhoneNo,usrPass);
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
 		}
-		else{
-			usrPass    = undefined;
-			document.getElementById("pass2").value = "";
-			alert("Password incorrect! Please Re-eneter confirmation password. Ensure CAPS-LOCK is switched off and the SHIFT key is not pressed down.");
+		else if (event.target == modal1) {
+			modal1.style.display = "none";
 		}
-	}
-
-	function storeAccInfo(fN,eM,pN,pW){
-		localStorage.setItem("fullname",fN);
-		localStorage.setItem("useremail",eM);
-		localStorage.setItem("teleno",pN);
-		localStorage.setItem("userpwd",pW);
-	}
-
-
-
-	/*Storage End-------------------------*/
-	function isEqual(str1,str2)
-	{
-		var bool= false;
-		if (str1 == str2) {
-			bool=true;
+		else if (event.target == modal2) {
+			modal2.style.display = "none";
+		}
+		else if (event.target == modal3) {
+			modal3.style.display = "none";
+		}
+		else if (event.target == modalPO) {
+			modalPO.style.display = "none";
+		}
+		else if (event.target == modalL) {
+			modalL.style.display = "none";
+		}
+		else if (event.target == modalC) {
+			modalC.style.display = "none";
+		}
+		else if (event.target == myModalPOMain) {
+			modalPOMain.style.display = "none";
 		}
 	}
-	function tickX(id){
-
-		var user1 = document.getElementById("email1").value;
-		var found= false;
-
-		for (var i = emailArray.length - 1; i >= 0 && !found; i--) {
-			if(user1.length>0){
-				document.getElementById(id).style.display = "inline-block";
-					//alert(emailArray[i]+" "+user1);
-					if(user1 === emailArray[i]){
-						//alert("Help ME");
-						document.getElementById(id).style.display = "none";
-						document.getElementById(id).src = "cross.png";
-						document.getElementById(id).style.display = "inline-block";
-						found= true;
-					}
-					else
-					{
-						document.getElementById(id).src = "tick.png";
-					}
-				}
-				else{
-					document.getElementById(id).style.display = "none";
-					document.getElementById("pass2").placeholder = "Confirm Password";
-				}
-			}
-
-		}
-
-		function checkPass(b){
-			
-			var psw1 = document.getElementById("pass1").value;
-			var psw2 = document.getElementById("pass2").value;
-			if(psw2.length>0){
-				document.getElementById(b).style.display = "inline-block"
-				if(psw1==psw2){
-					thesamePass = true;
-					psswd = psw1;
-				}
-				else
-				{
-					thesamePass = false;
-				}
-				changeStat(b,thesamePass);
-			}
-			else{
-				document.getElementById(b).style.display = "none";
-			}
-		}
-
-		function checkEmail(ca){
-			var e_mail = document.getElementById("email1").value;
-
-			if (e_mail.length>0){
-				document.getElementById(ca).style.display = "inline-block";
-				/*var emailArray = readTextFile("usersEmail.txt");*/
-				if(emailArray.length>0)
-				{
-
-					for(var i=0 ; i<emailArray.length ; i++)
-					{
-
-						if(e_mail == emailArray[i])
-						{
-							changeStat(ca,false);
-							alert(e_mail);
-						}
-						else{
-							changeStat(ca,true);
-						}
-					}
-				}
-
-			}
-			else{
-
-				document.getElementById(ca).style.display = "none";
-			}
-
-		}
-
-		function changeStat(a,aa)
-		{	
-
-			if(typeof (aa) != 'undefined'){
-
-				if(aa){
-					document.getElementById(a).src="tick.png";
-				}
-				else{
-
-					document.getElementById(a).src="cross.png";	
-
-				}
-			}
-		}
-
-
-		var modal= document.getElementById("myModal");
-		var modal1= document.getElementById("myModal1");
-		var modal2= document.getElementById("myModal2");
-		var modal3= document.getElementById("myModal3");
-		var modalPO= document.getElementById("myModalPO");
-		var modalL= document.getElementById("myModalL");
-		var modalC= document.getElementById("myModalC");
-		var modalPOMain= document.getElementById("myModalPOMain");	
-
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-			else if (event.target == modal1) {
-				modal1.style.display = "none";
-			}
-			else if (event.target == modal2) {
-				modal2.style.display = "none";
-			}
-			else if (event.target == modal3) {
-				modal3.style.display = "none";
-			}
-			else if (event.target == modalPO) {
-				modalPO.style.display = "none";
-			}
-			else if (event.target == modalL) {
-				modalL.style.display = "none";
-			}
-			else if (event.target == modalC) {
-				modalC.style.display = "none";
-			}
-			else if (event.target == myModalPOMain) {
-				modalPOMain.style.display = "none";
-			}
-		}
-	</script>
+</script>
 
 </body>
 </html>
