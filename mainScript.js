@@ -84,13 +84,14 @@ function topFunction() {
 	document.documentElement.scrollTop = 0;
 }
 
+var noPO;
 var somtoPO;
 var francisPO;
 var enesiPO;
 var hafizPO;
 var usersPass;
 var activeUsr;
-var activePos;
+var activePos=-1;
 
 var Cart;
 var viewCart;
@@ -187,6 +188,12 @@ function setCart()
 	hafizPO[1] = new food("Jollof Rice",10,8);
 	hafizPO[2] = new food("Steamed Lobster Tail",15,4);
 	hafizPO[3] = new food("Fried Rice",10,6);
+
+	noPO = new Array();
+	noPO[0] = new food("Honey Mustard Grilled Chicken",15,0);
+	noPO[1] = new food("Jollof Rice",10,0);
+	noPO[2] = new food("Steamed Lobster Tail",15,0);
+	noPO[3] = new food("Fried Rice",10,0);
 }
 
 
@@ -287,7 +294,8 @@ function printCart() {
 
 function logginCheck()
 {
-	if(document.getElementById("tab5").name === "Guest")
+	var bool = sessionStorage.getItem("avail");
+	if(!bool)
 	{
 		lunchModal("myModalPO");
 	}
@@ -334,8 +342,9 @@ function login(id,idpass)
 
 	if(found){
 
-		document.getElementById("tab5").innerHTML = usersName[i+1];
+		document.getElementById("tab5").innerHTML = "Welcome, "+usersName[i+1];
 		document.getElementById("tab5").name= usersName[i+1];
+		sessionStorage.setItem("avail",found);
 		closeModal("myModalL");
 	}
 	else
@@ -542,26 +551,29 @@ function getPO(pos)
 	{
 		myPO= francisPO;
 	}
-	 else if(activePos == 1)
+	else if(activePos == 1)
 	{
 		myPO= somtoPO;
 	}
-	 else if(activePos == 2)
+	else if(activePos == 2)
 	{
 		myPO= enesiPO;
 	}
-	 else if(activePos == 3)
+	else if(activePos == 3)
 	{
 		myPO=hafizPO;
 	}
-
-	return myPO;
+	else if(activePos == -1)
+	{
+		myPO= noPO;
+	}
+		return myPO;
 }
 function displayPO()
 {
 	
 	var myPO = getPO(activePos);
-	//loadUser();
+
 	if (myPO[0].itemQty == 0) {
 		document.getElementById("item1PO").style.display="none";
 	}else{
@@ -598,8 +610,10 @@ function displayPO()
 	var number =myPO[3].itemQty * myPO[3].itemPrice;
 	document.getElementById("item4TPPO").innerHTML = "$"+number+".00";
 	document.getElementById("qtySect4PO").innerHTML = myPO[3].itemQty;
-	//alert(101);
+
 	quickMathPO();
+	
+
 	lunchModal('myModalPOMain');
 }
 

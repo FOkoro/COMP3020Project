@@ -15,7 +15,7 @@
 	<script src="mainScript.js" type="text/javascript"></script> 
 </head>
 
-<body>
+<body >
 	<script src="mainScript.js"></script>
 	<button onclick="topFunction()" id="btnTop" title="Go to top">Top</button>
 	<div class="accPgCnt">
@@ -57,7 +57,7 @@
 					<input type="text" id="usrName" name = "usersName" placeholder="Enter Your Name">	
 				</div>
 				<div class="inputContainer">
-					<input id="email1" type="text" name = "email" placeholder="Your Email?" value="" oninput="tickX('estat');">
+					<input id="email1" type="text" name = "email" placeholder="Your Email?" value="" oninput="checkEmail()">
 					<div class="stat">
 						<img id="estat">
 					</div>
@@ -75,7 +75,7 @@
 					</div>
 				</div>
 				<!--<input type="submit" name="submit" value="Create Account">       "standard submit"-->
-				<p><button class="button5 button_success large_button" onclick="createAccount()">Create Account</button></p>
+				<p><button class="button5 button_success large_button" id="caButt" onclick="createAccount()" disabled="disabled" >Create Account</button></p>
 
 				
 

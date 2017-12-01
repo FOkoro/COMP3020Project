@@ -118,7 +118,7 @@ input{
 .button_success{
     color:white;
     background-color: black; 
-    border-color: #lelele;
+  
 }
 
 .button_success:active,
@@ -130,6 +130,16 @@ input{
     border-color: grey;
 }
 
+.button_success:disabled,
+.button_success[disabled],
+.button_success[disabled]:hover,
+.button_success[disabled]:active,
+.button_success[disabled]:focus{
+    color:white;
+    background-color: grey; 
+    font-weight:normal;
+
+}
 /*Button Config End---------------------------------------*/
 .stat > img{
     margin-top: -57px; 

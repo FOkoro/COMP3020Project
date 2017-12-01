@@ -4,6 +4,7 @@ var emailArray =["okorof@myumanitoba.ca","jattoe3@myumanitoba.ca","mbahs@myumani
 var names= ["Francis","Jatto","Somto","Hafiz"];
 var temp;
 var thesamePass;
+var validMail;
 var psswd;
 var accAvail = false;
 /*Storage-----------------------------*/
@@ -39,7 +40,9 @@ function createAccount()
 {
 	getAccInfo();
 	if(accAvail)
-	{
+	{	
+		
+		sessionStorage.setItem("avail",accAvail);
 		window.location.href = "index.html";
 	}
 
@@ -47,9 +50,11 @@ function createAccount()
 
 function getStoredAccount()
 {
-	if(accAvail){
-		document.getElementById("tab5").innerHTML = "Welcome, "+localStorage.getItem("fullname");
-
+	if(sessionStorage.getItem("avail")){
+		document.getElementById("tab5").innerHTML = "Welcome, "+sessionStorage.getItem("fullname");
+		alert(document.getElementsById("tab5").name);
+		document.getElementById("tab5").name= "notGuest";
+		alert(2);
 	}
 }
 
@@ -65,39 +70,40 @@ function isEqual(str1,str2)
 function tickX(id)
 {
 
-	var user1 = document.getElementById("email1").value;
-	var found= false;
-
-	for (var i = emailArray.length - 1; i >= 0 && !found; i--)
-	{
-		if(user1.length>0)
-		{
-			document.getElementById(id).style.display = "inline-block";
-			
-			if(user1 === emailArray[i])
-			{
-
-				document.getElementById(id).style.display = "none";
-				document.getElementById(id).src = "cross.png";
-				document.getElementById(id).style.display = "inline-block";
-				found= true;
-			}
-			else
-			{
-				document.getElementById(id).src = "tick.png";
-			}
-		}
-		else
-		{
-			document.getElementById(id).style.display = "none";
-			document.getElementById("pass2").placeholder = "Confirm Password";
-		}
+	
+	if(id){
+		document.getElementById("estat").style.display = "inline-block";
+		document.getElementById("estat").src = "tick.png";
 	}
+	else{
+		document.getElementById("estat").src = "cross.png";
+		document.getElementById("estat").style.display = "inline-block";
+	}
+	
 
 }
 
-function checkPass(b){
+function finalizeForm()
+{
+	
+}
 
+function validateUsr()
+{
+	var validated = false;
+	var in1=document.getElementById("usrName").value;
+	var in2= checkEmail();
+	var in3=document.getElementById("tel").value;
+	var in45 = thesamePass;
+	if(in45 && in2 && (in1.length>0) && (in2.length>0) ){
+
+		validated=true;
+
+	}
+return validated;
+}
+
+function checkPass(b){
 	var psw1 = document.getElementById("pass1").value;
 	var psw2 = document.getElementById("pass2").value;
 	if(psw2.length>0){
@@ -117,35 +123,45 @@ function checkPass(b){
 	}
 }
 
-function checkEmail(ca){
-	var e_mail = document.getElementById("email1").value;
+function checkEmail(){
 
+	var e_mail = document.getElementById("email1").value;
+	var validatedE =false ;
 	if (e_mail.length>0){
-		document.getElementById(ca).style.display = "inline-block";
-		/*var emailArray = readTextFile("usersEmail.txt");*/
+	
 		if(emailArray.length>0)
 		{
 
-			for(var i=0 ; i<emailArray.length ; i++)
+			for(var i=0 ;!validatedE && i<emailArray.length ; i++)
 			{
 
-				if(e_mail == emailArray[i])
+				if((!e_mail.includes("@")) && (!e_mail.includes(".")))
 				{
-					changeStat(ca,false);
-					alert(e_mail);
+					tickX(false);
 				}
-				else{
-					changeStat(ca,true);
+				else {
+					if( ( (e_mail.indexOf("@")) < (e_mail.indexOf(".")) ) && !(e_mail == emailArray[i]) &&  (e_mail.includes("@")) )
+					{
+						tickX(true);
+						validatedE = true;
+					}
+					else if(e_mail == emailArray[i]){
+						tickX(false);
+						alert(e_mail+" Already Has An Account.");	
+					}
+					else{
+						tickX(false);	
+					}
 				}
 			}
 		}
 
 	}
 	else{
-
-		document.getElementById(ca).style.display = "none";
+	
+		document.getElementById("estat").style.display = "none";
 	}
-
+	return validatedE;
 }
 
 function changeStat(a,aa)
