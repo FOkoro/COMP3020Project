@@ -12,13 +12,13 @@
 <body onload= "getStoredAccount()">
 	<script src="mainScript.js"></script>
 	<button onclick="topFunction()" id="btnTop" title="Go to top">Top</button>
-	<div class="fullCont">	
+	<div class="fullCont">
 		<div class="logo">
 			<img src="logo1C.png" width="100" height="100">
 			<img src="logo1PartB2.png" width="300" height="100">
 		</div>
 
-		<!-- -->
+		<!-- Segment -->
 
 		<!-- this is the main nav bar -->
 
@@ -33,7 +33,7 @@
 			</ul>
 		</div>
 
-		
+
 
 		<div class="sliderContainer">
 			<h2>
@@ -62,8 +62,8 @@
 				<div id="men1" ><img onclick="window.location.href='menu.html#vegiterian'" class="men11" src="greekSaladWithMushroom.jpg" ></div>
 			</div>
 		</div>
-		
-		
+
+
 
 
 		<div class="menContainer">
@@ -96,7 +96,7 @@
 				<div id="men1" style="background: #cfb283;">
 					<p>Plate Of Heaven is always interested in customer feedback.If you have any<br>questions, or praise please call, write, or e-mail us. Thank you.
 						<h4>Email Info:</h4>
-						<br>donttext@hotmail.com, dontcall@gmail.com 
+						<br>donttext@hotmail.com, dontcall@gmail.com
 						<br><br><h4>Mail To:</h4>
 						<br>Plate Of Heaven<br>Attn: Customer Care<br> 1 Heavens Gate, Suite 1 <br> Dubai, Qatar <br>
 						F1T 5A1
@@ -139,7 +139,7 @@
 
 
 			<div id="myModalPOMain" class="modal" >
-				<!-- Modal content -->					
+				<!-- Modal content -->
 				<div class="modal-content" style="background-color: #a37c3e;margin-top:10px;height:450px;width: 1100px">
 					<span class="close" style="margin-top:-15px;" onclick="closeModal('myModalPOMain')">&times;</span>
 					<div style="width:95%;height:75%;overflow-y:scroll;overflow-x: hidden;">
@@ -192,7 +192,7 @@
 									<div visibility="hidden" class="sect">
 										<input type="image" src="plus.png" class="qtyBut" name="#">
 									</div>
-									
+
 								</div>
 							</div>
 							<div class="priceContainer">
@@ -201,7 +201,7 @@
 							<div visibility="hidden" class="resetButtonContainer" >
 								<input type="image" class="delBut" src="delBut.jpg" name="#">
 							</div>
-						</div> 
+						</div>
 
 						<div class="foodItemContainer" id="item3PO">
 							<div class="foodImageOuterContainer" >
@@ -222,7 +222,7 @@
 									<div visibility="hidden" class="sect">
 										<input type="image" src="plus.png" class="qtyBut" name="#">
 									</div>
-									
+
 								</div>
 							</div>
 							<div class="priceContainer">
@@ -231,7 +231,7 @@
 							<div visibility="hidden" class="resetButtonContainer">
 								<input type="image" class="delBut" src="delBut.jpg" name="#">
 							</div>
-						</div> 
+						</div>
 
 						<div class="foodItemContainer"  id="item4PO">
 							<div class="foodImageOuterContainer">
@@ -252,7 +252,7 @@
 									<div visibility="hidden" class="sect">
 										<input type="image" src="plus.png" class="qtyBut" name="#">
 									</div>
-									
+
 								</div>
 							</div>
 							<div class="priceContainer">
@@ -275,7 +275,7 @@
 			<!--Here is the modal for the cart tab-->
 
 			<div id="myModalC" class="modal" >
-				<!-- Modal content -->					
+				<!-- Modal content -->
 				<div class="modal-content" style="background-color: #a37c3e;margin-top:10px;height:450px;width: 1100px">
 					<span class="close" style="margin-top:-15px;" onclick="closeModal('myModalC')">&times;</span>
 					<div style="width:95%;height:75%;overflow-y:scroll;overflow-x: hidden;">
@@ -328,7 +328,7 @@
 									<div class="sect" onclick="cartIncrese('qtySect2','item2TP','Jollof Rice')">
 										<input type="image" src="plus.png" class="qtyBut" name="#">
 									</div>
-									
+
 								</div>
 							</div>
 							<div class="priceContainer">
@@ -337,7 +337,7 @@
 							<div class="resetButtonContainer" onclick="cartDeleteItem('item2','Jollof Rice');">
 								<input type="image" class="delBut" src="delBut.jpg" name="#">
 							</div>
-						</div> 
+						</div>
 
 						<div class="foodItemContainer" id="item3">
 							<div class="foodImageOuterContainer" >
@@ -358,7 +358,7 @@
 									<div class="sect" onclick="cartIncrese('qtySect3','item3TP','Steamed Lobster Tail')">
 										<input type="image" src="plus.png" class="qtyBut" name="#">
 									</div>
-									
+
 								</div>
 							</div>
 							<div class="priceContainer">
@@ -367,7 +367,7 @@
 							<div class="resetButtonContainer" onclick="cartDeleteItem('item3','Steamed Lobster Tail');">
 								<input type="image" class="delBut" src="delBut.jpg" name="#">
 							</div>
-						</div> 
+						</div>
 
 						<div class="foodItemContainer"  id="item4">
 							<div class="foodImageOuterContainer">
@@ -388,7 +388,7 @@
 									<div class="sect" onclick="cartIncrese('qtySect4','item4TP','Fried Rice')">
 										<input type="image" src="plus.png" class="qtyBut" name="#">
 									</div>
-									
+
 								</div>
 							</div>
 							<div class="priceContainer">
@@ -459,7 +459,7 @@
 			var modalPO= document.getElementById("myModalPO");
 			var modalL= document.getElementById("myModalL");
 			var modalC= document.getElementById("myModalC");
-			var modalPOMain= document.getElementById("myModalPOMain");	
+			var modalPOMain= document.getElementById("myModalPOMain");
 
 			window.onclick = function(event) {
 				if (event.target == modal) {
