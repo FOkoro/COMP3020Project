@@ -114,22 +114,18 @@ function checkEmail() {
   var validatedE = false;
 
   if (e_mail.length > 0) {
-    if (emailArray.length > 0) {
-      for (var i = 0; !validatedE && i < emailArray.length; i++) {
-        if (!e_mail.includes("@") && !e_mail.includes(".")) {
-          tickX(false);
-        } else {
-          if (e_mail.indexOf("@") < e_mail.indexOf(".") && e_mail != emailArray[i] && e_mail.includes("@")) {
-            tickX(true);
-            validatedE = true;
-          } else if (e_mail == emailArray[i]) {
-            tickX(false);
-            alert(e_mail + " Already Has An Account.");
-          } else {
-            tickX(false);
-          }
-        }
+    var isValidFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e_mail);
+
+    if (isValidFormat) {
+      if (!emailArray.includes(e_mail)) {
+        tickX(true);
+        validatedE = true;
+      } else {
+        tickX(false);
+        alert(e_mail + " Already Has an Account.");
       }
+    } else {
+      tickX(false);
     }
   } else {
     document.getElementById("estat").style.display = "none";
