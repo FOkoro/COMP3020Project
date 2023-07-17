@@ -92,21 +92,22 @@ function validateUsr() {
 function checkPass(b) {
   var psw1 = document.getElementById("pass1").value;
   var psw2 = document.getElementById("pass2").value;
+  var isValid = false;
 
   if (psw2.length > 0) {
     document.getElementById(b).style.display = "inline-block";
 
-    if (psw1 == psw2) {
-      thesamePass = true;
+    if (psw1 === psw2) {
+      isValid = true;
       psswd = psw1;
-    } else {
-      thesamePass = false;
     }
 
-    changeStat(b, thesamePass);
+    changeStat(b, isValid);
   } else {
     document.getElementById(b).style.display = "none";
   }
+
+  return isValid;
 }
 
 function checkEmail() {
